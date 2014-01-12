@@ -1,22 +1,33 @@
-Running: /opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_isim_beh.exe -prj /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_beh.prj work.HexDecoder_tb 
+Running: /opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb_isim_beh.exe -prj /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb_beh.prj work.Top_HexCounter_tb 
 ISim P.68d (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd" into library work
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" into library work
 Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd" into library work
-Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb.vhd" into library work
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd" into library work
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd" into library work
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd" into library work
+Parsing VHDL file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 95988 KB
-Fuse CPU Usage: 1220 ms
+Fuse Memory Usage: 97496 KB
+Fuse CPU Usage: 1250 ms
 Compiling package standard
 Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity PRESCALER [\PRESCALER(50000000,25000000)\]
+Compiling architecture behavioral of entity DEBOUNCER [debouncer_default]
+Compiling architecture behavioral of entity STATEMACHINE [statemachine_default]
+Compiling architecture behavioral of entity HEXCOUNTER [hexcounter_default]
 Compiling architecture dataflow of entity HEXDECODER [hexdecoder_default]
-Compiling architecture behavior of entity hexdecoder_tb
+Compiling architecture structural of entity TOP_HEXCOUNTER [top_hexcounter_default]
+Compiling architecture behavior of entity top_hexcounter_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 VHDL Units
-Built simulation executable /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_isim_beh.exe
-Fuse Memory Usage: 661800 KB
-Fuse CPU Usage: 1250 ms
-GCC CPU Usage: 160 ms
+Compiled 17 VHDL Units
+Built simulation executable /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb_isim_beh.exe
+Fuse Memory Usage: 669892 KB
+Fuse CPU Usage: 1360 ms
+GCC CPU Usage: 500 ms

@@ -1,1 +1,6 @@
+work	"Debouncer.vhd"
+work	"HexCounter.vhd"
 work	"HexDecoder.vhd"
+work	"Prescaler.vhd"
+work	"StateMachine.vhd"
+work	"Top_HexCounter.vhd"

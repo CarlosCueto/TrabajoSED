@@ -35,7 +35,8 @@ entity TOP_HEXCOUNTER is
            PAUSE : in  STD_LOGIC;
            RESET : in  STD_LOGIC;
            DIG1 : out  STD_LOGIC_VECTOR (7 downto 0);
-           DIG2 : out  STD_LOGIC_VECTOR (7 downto 0));
+           DIG2 : out  STD_LOGIC_VECTOR (7 downto 0)
+	  );
 end TOP_HEXCOUNTER;
 
 architecture STRUCTURAL of TOP_HEXCOUNTER is
@@ -68,6 +69,8 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 		DECODER_EN : OUT std_logic
 		);
 	end component;
+	
+
 
 	component HEXCOUNTER
 	port(
@@ -107,6 +110,7 @@ begin
 		CLR_N => RESET,
 		SIGNAL_OUT => DEBOUNCED_START
 	);
+
 	
 	PAUSE_DEBOUNCER: DEBOUNCER port map(
 		CLK => SCALED_CLK,
@@ -125,6 +129,8 @@ begin
 		DECODER_EN => DECODER_EN
 	);
 	
+	
+	
 	FRST_DIG: HEXCOUNTER port map(
 		CLK => SCALED_CLK,
 		CLR_N => RESET,
@@ -132,6 +138,7 @@ begin
 		COUNT_OUT => FRST_HEX,
 		CO => FRST_DIG_CARRY
 	);
+	
 	
 	SCND_DIG: HEXCOUNTER port map(
 		CLK => SCALED_CLK,

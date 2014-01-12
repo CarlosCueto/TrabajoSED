@@ -1,6 +1,5 @@
 ISim log file
-Running: /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_isim_beh.wdb 
-INFO: There is another simulation running in the same directory. Using database file name isim2.wdb.
+Running: /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter_tb_isim_beh.wdb 
 ISim P.68d (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -15,7 +14,7 @@ Finished circuit initialization process.
 
 ** Failure:OK. Test Finished
 User(VHDL) Code Called Simulation Stop
-In process HexDecoder_tb.vhd:stim_proc 
+In process Top_HexCounter_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
 # exit 0
