@@ -1,4 +1,4 @@
 AR prescaler behavioral /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd sub00/vhpl01 1389503733
-AR hexdecoder dataflow /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd sub00/vhpl03 1389503747
-EN hexdecoder NULL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd sub00/vhpl02 1389503746
+AR hexdecoder dataflow /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd sub00/vhpl03 1389504315
+EN hexdecoder NULL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd sub00/vhpl02 1389504314
 EN prescaler NULL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd sub00/vhpl00 1389503732
