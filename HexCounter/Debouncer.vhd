@@ -31,7 +31,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity DEBOUNCER is
 	PORT(
-		CLK, SIGNAL_IN, CLR_N : out std_logic;
+		CLK : in std_logic;
+		SIGNAL_IN, CLR_N : in std_logic;
 		SIGNAL_OUT : out std_logic
 	);
 	
