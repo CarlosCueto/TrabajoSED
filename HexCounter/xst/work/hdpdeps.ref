@@ -1,0 +1,8 @@
+V3 3
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd 2014/01/12.04:47:11 P.68d
+EN work/PRESCALER 1389498435 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd \
+      PB ieee/std_logic_1164 1370735607
+AR work/PRESCALER/BEHAVIORAL 1389498436 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd \
+      EN work/PRESCALER 1389498435

@@ -1,0 +1,5 @@
+set -tmpdir "/home/maxwell/GitHub/TrabajoSED/HexCounter/xst/projnav.tmp"
+set -xsthdpdir "/home/maxwell/GitHub/TrabajoSED/HexCounter/xst"
+elaborate
+-ifn PRESCALER.prj
+-ifmt mixed

@@ -21,7 +21,16 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="HexCounter.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PRESCALER.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PRESCALER.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="PRESCALER.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Prescaler.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Prescaler.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Prescaler.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
 
