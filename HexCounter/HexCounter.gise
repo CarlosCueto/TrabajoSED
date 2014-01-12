@@ -23,6 +23,12 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HEXDECODER.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HEXDECODER.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="HEXDECODER.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HexDecoder.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HexDecoder.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="HexDecoder.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PRESCALER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PRESCALER.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="PRESCALER.xst"/>
