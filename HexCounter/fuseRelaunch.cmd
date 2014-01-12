@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler_tb_isim_beh.exe" -prj "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler_tb_beh.prj" "work.Prescaler_tb" 

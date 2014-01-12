@@ -1,0 +1,2 @@
+vhdl isim_temp "Prescaler.vhd"
+vhdl isim_temp "Prescaler_tb.vhd"

@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity PRESCALER is
 	 Generic (
 			FREC_IN : positive := 50e6;
-			PERIOD_OUT : positive := 2000
+			FREC_OUT : positive := 25e6
 	 );
     Port ( 
 			  CLK_IN, CLR_N : in  std_logic;
@@ -42,29 +42,40 @@ end PRESCALER;
 
 architecture BEHAVIORAL of PRESCALER is
 
-	subtype NEEDED_SIZE is integer range 0 to FREC_IN * PERIOD_OUT;
+	subtype NEEDED_SIZE is integer range 0 to FREC_IN / FREC_OUT;
 
-	constant N : NEEDED_SIZE := FREC_IN * PERIOD_OUT;
+	constant N : NEEDED_SIZE := FREC_IN / FREC_OUT;
 	signal count : NEEDED_SIZE;
+	
+	signal CLK_OUT_i : std_logic;
 	
 begin
 
-	process(CLK_IN)
+	process(CLR_N, CLK_IN)
 	begin
 		if CLR_N = '0' then
 			count <= 0;
-		elsif CLK_IN'event and CLK_IN = '1' then
-			if count < N then
+			CLK_OUT_i <= '0';
+		elsif CLK_IN'event then
+			if count < N-1 then
 				count <= count + 1;
 			else
 				count <= 0;
+				
+				if CLK_OUT_i = '0' then
+					CLK_OUT_i <= '1';
+				else
+					CLK_OUT_i <= '0';
+				end if;
+				
 			end if;
 		end if;
+		
+		CLK_OUT <= CLK_OUT_i;
 			
 	end process;
 	
-	CLK_OUT <= '1' when count < N/2 else
-					'0';
+	
 
 end BEHAVIORAL;
 

@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to /home/maxwell/GitHub/TrabajoSED/HexCounter/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to /home/maxwell/GitHub/TrabajoSED/HexCounter/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
@@ -21,18 +21,20 @@ WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Onl
 *                          HDL Compilation                              *
 =========================================================================
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" in Library work.
-Architecture behavioral of Entity prescaler is up to date.
+Entity <prescaler> compiled.
+ERROR:HDLParsers:3312 - "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" Line 45. Undefined symbol 'PERIOD_OUT'.
+ERROR:HDLParsers:1209 - "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" Line 45. PERIOD_OUT: Undefined symbol (last report in this block)
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> 
 
 
-Total memory usage is 475156 kilobytes
+Total memory usage is 475184 kilobytes
 
-Number of errors   :    0 (   0 filtered)
+Number of errors   :    2 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
