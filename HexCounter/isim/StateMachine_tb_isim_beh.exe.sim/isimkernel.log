@@ -1,0 +1,35 @@
+Command line:
+   StateMachine_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  38168
+
+Sun Jan 12 13:26:40 2014
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 204.96 Meg
+
+ Total Signals          : 16
+ Total Nets             : 9
+ Total Signal Drivers   : 9
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 5
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 430
+Total Line Count : 47
+
+** Failure:OK
+User(VHDL) Code Called Simulation Stop
+In process StateMachine_tb.vhd:stim_proc 
+ 
+
+
+ Total Simulation Time: 0.02 sec
+
+ Current Memory Usage: 280.461 Meg
+
+Sun Jan 12 13:26:43 2014
+

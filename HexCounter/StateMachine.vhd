@@ -52,7 +52,7 @@ begin
 	
 		case EST_ACTUAL is
 			when STATE0 =>
-				if START = '1' then
+				if START = '1' and PAUSE = '0' and COUNT_END = '0' then
 					EST_SIGUIENTE <= STATE1;
 				else
 					EST_SIGUIENTE <= STATE0;
@@ -68,7 +68,9 @@ begin
 				end if;
 				
 			when STATE2 =>
-				if START = '1' then
+				if COUNT_END = '1' then
+					EST_SIGUIENTE <= STATE0;
+				elsif START = '1' then
 					EST_SIGUIENTE <= STATE1;
 				else
 					EST_SIGUIENTE <= STATE2;

@@ -42,14 +42,16 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Prescaler.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Prescaler.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Prescaler.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Prescaler_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Prescaler_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Prescaler_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Prescaler_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="STATEMACHINE.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="STATEMACHINE.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="STATEMACHINE.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="STATEMACHINE.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="StateMachine_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="StateMachine_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="StateMachine_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="StateMachine_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TOP_HEXCOUNTER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TOP_HEXCOUNTER.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="TOP_HEXCOUNTER.xst"/>
@@ -66,7 +68,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389525820" xil_pn:in_ck="7437694944835576715" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389525820">
+    <transform xil_pn:end_ts="1389529596" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389529596">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
@@ -75,13 +77,14 @@
       <outfile xil_pn:name="Prescaler.vhd"/>
       <outfile xil_pn:name="Prescaler_tb.vhd"/>
       <outfile xil_pn:name="StateMachine.vhd"/>
+      <outfile xil_pn:name="StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389523777" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1993135513952317844" xil_pn:start_ts="1389523777">
+    <transform xil_pn:end_ts="1389527571" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6870541030613552865" xil_pn:start_ts="1389527571">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389523777" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3875239919751517476" xil_pn:start_ts="1389523777">
+    <transform xil_pn:end_ts="1389527571" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3381131650055823463" xil_pn:start_ts="1389527571">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -89,7 +92,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389525820" xil_pn:in_ck="7437694944835576715" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389525820">
+    <transform xil_pn:end_ts="1389529596" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389529596">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
@@ -98,24 +101,25 @@
       <outfile xil_pn:name="Prescaler.vhd"/>
       <outfile xil_pn:name="Prescaler_tb.vhd"/>
       <outfile xil_pn:name="StateMachine.vhd"/>
+      <outfile xil_pn:name="StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389525822" xil_pn:in_ck="7437694944835576715" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1356722855827615029" xil_pn:start_ts="1389525820">
+    <transform xil_pn:end_ts="1389529597" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4046491332078665953" xil_pn:start_ts="1389529596">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Prescaler_tb_beh.prj"/>
-      <outfile xil_pn:name="Prescaler_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="StateMachine_tb_beh.prj"/>
+      <outfile xil_pn:name="StateMachine_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1389525822" xil_pn:in_ck="65970500280626213" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5509416810431170718" xil_pn:start_ts="1389525822">
+    <transform xil_pn:end_ts="1389529598" xil_pn:in_ck="-5237755313376664705" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-484954428550760500" xil_pn:start_ts="1389529597">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Prescaler_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="StateMachine_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
