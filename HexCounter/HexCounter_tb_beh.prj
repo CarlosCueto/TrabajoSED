@@ -1,0 +1,2 @@
+vhdl work "HexCounter.vhd"
+vhdl work "HexCounter_tb.vhd"
