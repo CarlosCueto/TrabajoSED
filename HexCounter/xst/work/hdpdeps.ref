@@ -1,4 +1,4 @@
-V3 6
+V3 9
 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd 2014/01/12.06:25:10 P.68d
 EN work/HEXDECODER 1389504314 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd \
@@ -13,3 +13,10 @@ EN work/PRESCALER 1389503732 \
 AR work/PRESCALER/BEHAVIORAL 1389503733 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd \
       EN work/PRESCALER 1389503732
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd 2014/01/12.07:02:26 P.68d
+EN work/STATEMACHINE 1389506550 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd \
+      PB ieee/std_logic_1164 1370735607
+AR work/STATEMACHINE/BEHAVIORAL 1389506551 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd \
+      EN work/STATEMACHINE 1389506550

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-01-12T05:14:19</DateModified>
+  <DateModified>2014-01-12T07:01:35</DateModified>
   <ModuleName>DEBOUNCER</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/maxwell/GitHub/TrabajoSED/HexCounter/iseconfig/DEBOUNCER.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/maxwell/GitHub/TrabajoSED/HexCounter</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/maxwell/GitHub/TrabajoSED/HexCounter/</ImplementationReportsDirectory>
   <DateInitialized>2014-01-12T05:14:19</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
