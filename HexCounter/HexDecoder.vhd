@@ -48,7 +48,8 @@ begin
 --      d
    
    
-   LED(7 downto 1)<= "1001111" when HEX = "0001" and EN = '1' else   --1
+   LED(7 downto 1)<= "1111110" when EN = '0' else
+							"1001111" when HEX = "0001" and EN = '1' else   --1
 							"0010010" when HEX = "0010" and EN = '1' else   --2
 							"0000110" when HEX = "0011" and EN = '1' else   --3
 							"1001100" when HEX = "0100" and EN = '1' else   --4
@@ -63,10 +64,9 @@ begin
 							"1000010" when HEX = "1101" and EN = '1' else   --d
 							"0110000" when HEX = "1110" and EN = '1' else   --E
 							"0111000" when HEX = "1111" and EN = '1' else   --F
-							"1111110" when EN = '0' else
 							"0000001" ;   --0
 	
-	LED(0) <= '0';
+	LED(0) <= '1';
 
 end DATAFLOW;
 

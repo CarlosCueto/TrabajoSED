@@ -1,0 +1,2 @@
+vhdl work "HexDecoder.vhd"
+vhdl work "HexDecoder_tb.vhd"

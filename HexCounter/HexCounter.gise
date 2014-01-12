@@ -32,9 +32,14 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HEXDECODER.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="HEXDECODER.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="HEXDECODER.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="HexCounter_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HexCounter_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HexDecoder.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HexDecoder.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="HexDecoder.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HexDecoder_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="HexDecoder_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="HexDecoder_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PRESCALER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="PRESCALER.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="PRESCALER.vhi"/>
@@ -48,9 +53,7 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="STATEMACHINE.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="STATEMACHINE.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="STATEMACHINE.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="StateMachine_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="StateMachine_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="StateMachine_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="StateMachine_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TOP_HEXCOUNTER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="TOP_HEXCOUNTER.stx"/>
@@ -64,27 +67,29 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1389523741" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1389523741">
+    <transform xil_pn:end_ts="1389530406" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1389530406">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389529596" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389529596">
+    <transform xil_pn:end_ts="1389534293" xil_pn:in_ck="1871438422900829200" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389534293">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
       <outfile xil_pn:name="HexCounter.vhd"/>
+      <outfile xil_pn:name="HexCounter_tb.vhd"/>
       <outfile xil_pn:name="HexDecoder.vhd"/>
+      <outfile xil_pn:name="HexDecoder_tb.vhd"/>
       <outfile xil_pn:name="Prescaler.vhd"/>
       <outfile xil_pn:name="Prescaler_tb.vhd"/>
       <outfile xil_pn:name="StateMachine.vhd"/>
       <outfile xil_pn:name="StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389527571" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6870541030613552865" xil_pn:start_ts="1389527571">
+    <transform xil_pn:end_ts="1389533585" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4113372911121099834" xil_pn:start_ts="1389533585">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389527571" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3381131650055823463" xil_pn:start_ts="1389527571">
+    <transform xil_pn:end_ts="1389533585" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8338728534084628866" xil_pn:start_ts="1389533585">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -92,34 +97,36 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389529596" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389529596">
+    <transform xil_pn:end_ts="1389534293" xil_pn:in_ck="1871438422900829200" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389534293">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
       <outfile xil_pn:name="HexCounter.vhd"/>
+      <outfile xil_pn:name="HexCounter_tb.vhd"/>
       <outfile xil_pn:name="HexDecoder.vhd"/>
+      <outfile xil_pn:name="HexDecoder_tb.vhd"/>
       <outfile xil_pn:name="Prescaler.vhd"/>
       <outfile xil_pn:name="Prescaler_tb.vhd"/>
       <outfile xil_pn:name="StateMachine.vhd"/>
       <outfile xil_pn:name="StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389529597" xil_pn:in_ck="2435960536182841446" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4046491332078665953" xil_pn:start_ts="1389529596">
+    <transform xil_pn:end_ts="1389534295" xil_pn:in_ck="1871438422900829200" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-9039829768501797367" xil_pn:start_ts="1389534293">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="StateMachine_tb_beh.prj"/>
-      <outfile xil_pn:name="StateMachine_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="HexDecoder_tb_beh.prj"/>
+      <outfile xil_pn:name="HexDecoder_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1389529598" xil_pn:in_ck="-5237755313376664705" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-484954428550760500" xil_pn:start_ts="1389529597">
+    <transform xil_pn:end_ts="1389534295" xil_pn:in_ck="1297826831367625415" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7080047617323135530" xil_pn:start_ts="1389534295">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="StateMachine_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="HexDecoder_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine_tb_isim_beh.exe" -prj "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine_tb_beh.prj" "work.StateMachine_tb" 
+-intstyle "ise" -incremental -o "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_isim_beh.exe" -prj "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder_tb_beh.prj" "work.HexDecoder_tb" 
