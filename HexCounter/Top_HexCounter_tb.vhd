@@ -47,9 +47,10 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
          START : IN  std_logic;
          PAUSE : IN  std_logic;
          RESET : IN  std_logic;
+			LOAD : IN std_logic;
+			DIG_IN : IN  std_logic_vector(3 downto 0);
          DIG1 : OUT  std_logic_vector(7 downto 0);
          DIG2 : OUT  std_logic_vector(7 downto 0)
-
         );
     END COMPONENT;
     
@@ -59,10 +60,13 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
    signal START : std_logic := '0';
    signal PAUSE : std_logic := '0';
    signal RESET : std_logic := '0';
+	signal LOAD : std_logic := '0';
+	signal DIG_IN : std_logic_vector(3 downto 0);
 
  	--Outputs
    signal DIG1 : std_logic_vector(7 downto 0);
    signal DIG2 : std_logic_vector(7 downto 0);
+	
 
    -- Clock period definitions
    constant CLK_period : time := 20 ns;
@@ -79,6 +83,8 @@ BEGIN
           START => START,
           PAUSE => PAUSE,
           RESET => RESET,
+			 LOAD => LOAD,
+			 DIG_IN => DIG_IN,
           DIG1 => DIG1,
           DIG2 => DIG2
         );
@@ -108,43 +114,43 @@ BEGIN
 		wait until CLK'event;
 	end process;
 	
-	--RESET <= '0', '1' after 0.2*CLK_period;
+
 
    -- Stimulus process
    stim_proc: process
    begin		
---		RESET <= '0';
---		wait for 2 ns;
---		RESET <= '1';
---		
---		wait for 60 ns;
---   
---		assert DIG1 = "11111101" and DIG2 = "11111101"
---			report "Reset malfunction"
---			severity failure;
---			
---		START <= '1';
---		PAUSE <= '0';
---		
---		wait for 120 ns;
---		
---		START <= '0';
---		
---		for i in 0 to 15 loop
---		
---			wait until CLK_DOS;
---
---		end loop;
---		
---		assert DIG1 = "01110001" and DIG2 = "00000011"
---			report "First digit malfunction"
---			severity failure;
---			
---		wait until CLK_DOS;
---		
---		assert DIG1 = "00000011" and DIG2 = "10011111"
---			report "Carry malfunction"
---			severity failure;
+		RESET <= '0';
+		wait for 2 ns;
+		RESET <= '1';
+		
+		wait for 60 ns;
+   
+		assert DIG1 = "11111101" and DIG2 = "11111101"
+			report "Reset malfunction"
+			severity failure;
+			
+		START <= '1';
+		PAUSE <= '0';
+		
+		wait for 120 ns;
+		
+		START <= '0';
+		
+		for i in 0 to 15 loop
+		
+			wait until CLK_DOS;
+
+		end loop;
+		
+		assert DIG1 = "01110001" and DIG2 = "00000011"
+			report "First digit malfunction"
+			severity failure;
+			
+		wait until CLK_DOS;
+		
+		assert DIG1 = "00000011" and DIG2 = "10011111"
+			report "Carry malfunction"
+			severity failure;
 			
 ----------------------------------------------------------		
 		
@@ -184,10 +190,103 @@ BEGIN
 			report "Pause malfunction"
 			severity failure;
 				
+
+	
+	----------------------------------------------------
+	----------------------------------------------------
+		
+		
+		RESET <= '0';
+		wait for 2 ns;
+		RESET <= '1';
+		
+		wait for 60 ns;
+		
+		assert DIG1 = "11111101" and DIG2 = "11111101"
+			report "Reset malfunction"
+			severity failure;
+		
+		START <= '0';
+		PAUSE <= '0';
+		LOAD <= '1';
+		
+		wait for 90 ns;
+		
+		LOAD <= '0';
+		
+		wait for 90 ns;
+		
+		assert DIG1 = "11111101" and DIG2 = "11111101"
+			report "ST3 malfunction"
+			severity failure;
+		
+		DIG_IN <= "0101";
+		LOAD <= '1';
+		
+		wait for 90 ns;
+		
+		LOAD <= '0';
+		
+		wait for 90 ns;
+		
+		assert DIG1 = "11111101" and DIG2 = "11111101"
+			report "ST5 malfunction"
+			severity failure;
+	
+		DIG_IN <= "1010";
+		LOAD <= '1';
+		
+		wait for 120 ns;
+		
+		LOAD <= '0';
+		
+		wait for 90 ns;
+		
+		
+		assert DIG1 = "01001001" and DIG2 = "00010001"
+			report "Load malfunction"
+			severity failure;
+			
+		LOAD <= '1';
+		
+		wait for 120 ns;
+		
+		LOAD <= '0';
+		
+		assert DIG1 = "11111101" and DIG2 = "11111101"
+			report "Back to ST0 malfunction"
+			severity failure;
+			
+			
+			
+		START <= '1';
+		PAUSE <= '0';
+		
+		wait for 120 ns;
+		
+		START <= '0';
+		
+		for i in 0 to 10 loop
+		
+			wait until CLK_DOS;
+
+		end loop;
+		
+		assert DIG1 = "01110001" and DIG2 = "00010001"
+			report "First digit malfunction"
+			severity failure;
+			
+		wait until CLK_DOS;
+		
+		assert DIG1 = "00000011" and DIG2 = "11000001"
+			report "Carry malfunction"
+			severity failure;
+					
 		assert false
 			report "OK. Test Finished"
 			severity failure;
 
    end process;
+	
 
 END;
