@@ -35,7 +35,9 @@ entity HEXCOUNTER is
     Port ( CLK : in  std_logic;
            CLR_N : in  std_logic;
            CI : in  std_logic;
+			  LOAD : in std_logic;
            COUNT_OUT : out  std_logic_vector(3 downto 0);
+			  COUNT_IN : in std_logic_vector(3 downto 0);
            CO : out  std_logic
 	 );
 end HEXCOUNTER;
@@ -49,7 +51,10 @@ begin
 		if CLR_N = '0' then
 			COUNT_i <= (OTHERS => '0');
 		elsif CLK'event and CLK = '1' then
-			if CI = '1' then
+			if LOAD = '1' then
+				COUNT_i <= COUNT_IN;
+		
+			elsif CI = '1' then
 				COUNT_i <= COUNT_i + 1;
 			end if;
 		end if;
