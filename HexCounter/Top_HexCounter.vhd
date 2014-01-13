@@ -105,6 +105,15 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 		);
 	end component;
 	
+	COMPONENT MUX
+	PORT(
+		SIGNAL1 : IN std_logic_vector(7 downto 0);
+		SIGNAL2 : IN std_logic_vector(7 downto 0);
+		SEL : IN std_logic;          
+		SIGNAL_OUT : OUT std_logic_vector(7 downto 0)
+		);
+	END COMPONENT;
+	
 	signal SCALED_CLK : std_logic;
 	signal DEBOUNCED_START, DEBOUNCED_PAUSE, DEBOUNCED_LOAD : std_logic;
 	signal COUNT_EN, DECODER_EN, COUNT_END, DEMUX_SEL, LOAD1, LOAD2 : std_logic;
@@ -202,8 +211,15 @@ begin
 	DISPLAY_DEMUX: DEMUX PORT MAP(
 		SIGNAL_IN => '0',
 		SEL => CLK,
-		SIGNAL1 => DISPLAY_SEL(0),
-		SIGNAL2 => DISPLAY_SEL(1)
+		SIGNAL1 => DISPLAY_SEL(1),
+		SIGNAL2 => DISPLAY_SEL(0)
+	);
+	
+	DISPLAY_MUX: MUX PORT MAP(
+		SIGNAL1 => DIG2,
+		SIGNAL2 => DIG1,
+		SEL => CLK,
+		SIGNAL_OUT => DIG_OUT
 	);
 
 end STRUCTURAL;
