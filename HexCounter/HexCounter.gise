@@ -27,6 +27,11 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DEBOUNCER.stx"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="DEBOUNCER.vhi"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="DEBOUNCER.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DEMUX.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DEMUX.stx"/>
+    <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="DEMUX.vhi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DEMUX.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Demux_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_VHDL_INSTTEMPLATE" xil_pn:name="HEXCOUNTER.vhi"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HEXDECODER.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HEXDECODER.stx"/>
@@ -59,6 +64,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Top_HexCounter_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Top_HexCounter_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Top_HexCounter_tb_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Top_HexCounter_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -72,10 +78,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389539928" xil_pn:in_ck="1676199749690440364" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389539928">
+    <transform xil_pn:end_ts="1389620321" xil_pn:in_ck="-7303840670349733273" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389620321">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
+      <outfile xil_pn:name="Demux.vhd"/>
+      <outfile xil_pn:name="Demux_tb.vhd"/>
       <outfile xil_pn:name="HexCounter.vhd"/>
       <outfile xil_pn:name="HexCounter_tb.vhd"/>
       <outfile xil_pn:name="HexDecoder.vhd"/>
@@ -87,11 +95,11 @@
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
       <outfile xil_pn:name="Top_HexCounter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389535473" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3682629128987069538" xil_pn:start_ts="1389535473">
+    <transform xil_pn:end_ts="1389618137" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="3682629128987069538" xil_pn:start_ts="1389618137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389535473" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2094594303110365414" xil_pn:start_ts="1389535473">
+    <transform xil_pn:end_ts="1389618137" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2094594303110365414" xil_pn:start_ts="1389618137">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -99,10 +107,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389539928" xil_pn:in_ck="1676199749690440364" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389539928">
+    <transform xil_pn:end_ts="1389620321" xil_pn:in_ck="-7303840670349733273" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389620321">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
+      <outfile xil_pn:name="Demux.vhd"/>
+      <outfile xil_pn:name="Demux_tb.vhd"/>
       <outfile xil_pn:name="HexCounter.vhd"/>
       <outfile xil_pn:name="HexCounter_tb.vhd"/>
       <outfile xil_pn:name="HexDecoder.vhd"/>
@@ -114,7 +124,7 @@
       <outfile xil_pn:name="Top_HexCounter.vhd"/>
       <outfile xil_pn:name="Top_HexCounter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1389539930" xil_pn:in_ck="1676199749690440364" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7630141356553475905" xil_pn:start_ts="1389539928">
+    <transform xil_pn:end_ts="1389620323" xil_pn:in_ck="-7303840670349733273" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7630141356553475905" xil_pn:start_ts="1389620321">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -126,7 +136,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1389539931" xil_pn:in_ck="-3044168741718035966" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8048413847389737714" xil_pn:start_ts="1389539930">
+    <transform xil_pn:end_ts="1389620323" xil_pn:in_ck="-3985059254863395959" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8048413847389737714" xil_pn:start_ts="1389620323">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Top_HexCounter_tb_isim_beh.wdb"/>

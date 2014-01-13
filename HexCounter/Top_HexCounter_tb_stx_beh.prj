@@ -1,0 +1,8 @@
+vhdl isim_temp "StateMachine.vhd"
+vhdl isim_temp "Prescaler.vhd"
+vhdl isim_temp "HexDecoder.vhd"
+vhdl isim_temp "HexCounter.vhd"
+vhdl isim_temp "Demux.vhd"
+vhdl isim_temp "Debouncer.vhd"
+vhdl isim_temp "Top_HexCounter.vhd"
+vhdl isim_temp "Top_HexCounter_tb.vhd"

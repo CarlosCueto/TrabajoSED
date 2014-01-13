@@ -32,27 +32,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity STATEMACHINE is
 
 	PORT (
-		CLK, CLR_N, START, PAUSE, COUNT_END : in std_logic;
-		COUNT_EN, DECODER_EN : out std_logic
+		CLK, CLR_N, START, PAUSE, COUNT_END, LOAD : in std_logic;
+		COUNT_EN, DECODER_EN, DEMUX_SEL, LOAD1, LOAD2 : out std_logic
 	);
 
 end STATEMACHINE;
 
 architecture BEHAVIORAL of STATEMACHINE is
 
-	type STATE is (STATE0,STATE1,STATE2);
+	type STATE is (STATE0,STATE1,STATE2, STATE3, STATE4, STATE5, STATE6, STATE7);
 	
 	signal EST_ACTUAL, EST_SIGUIENTE : STATE;
 
 begin
 	
 	ESTADO_SIGUIENTE:
-	process(EST_ACTUAL, START, PAUSE, COUNT_END)
+	process(EST_ACTUAL, START, PAUSE, COUNT_END, LOAD)
 	begin
 	
 		case EST_ACTUAL is
 			when STATE0 =>
-				if START = '1' and PAUSE = '0' and COUNT_END = '0' then
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE3;
+				elsif START = '1' and PAUSE = '0' and COUNT_END = '0' then
 					EST_SIGUIENTE <= STATE1;
 				else
 					EST_SIGUIENTE <= STATE0;
@@ -75,7 +77,33 @@ begin
 				else
 					EST_SIGUIENTE <= STATE2;
 				end if;
+				
+			when STATE3 =>
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE4;
+				else
+					EST_SIGUIENTE <= STATE3;
+				end if;
+				
+			when STATE4 =>
+				EST_SIGUIENTE <= STATE5;
+				
+			when STATE5 =>
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE6;
+				else
+					EST_SIGUIENTE <= STATE5;
+				end if;
 			
+			when STATE6 =>
+				EST_SIGUIENTE <= STATE7;
+			
+			when STATE7 =>
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE0;
+				else
+					EST_SIGUIENTE <= STATE7;
+				end if;
 			
 		end case;
 	end process ESTADO_SIGUIENTE;
@@ -98,14 +126,60 @@ begin
 			when STATE0 =>
 				COUNT_EN <= '0';
 				DECODER_EN <= '0';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
 				
 			when STATE1 =>
 				COUNT_EN <= '1';
 				DECODER_EN <= '1';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
 			
 			when STATE2 =>
 				COUNT_EN <= '0';
 				DECODER_EN <= '1';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
+				
+			when STATE3 =>
+				COUNT_EN <= '0';
+				DECODER_EN <= '0';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
+				
+			when STATE4 =>
+				COUNT_EN <= '0';
+				DECODER_EN <= '0';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '1';
+				LOAD2 <= '0';
+				
+			when STATE5 =>
+				COUNT_EN <= '0';
+				DECODER_EN <= '0';
+				DEMUX_SEL <= '1';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
+				
+			when STATE6 =>
+				COUNT_EN <= '0';
+				DECODER_EN <= '0';
+				DEMUX_SEL <= '1';
+				LOAD1 <= '0';
+				LOAD2 <= '1';
+				
+			when STATE7 =>
+				COUNT_EN <= '0';
+				DECODER_EN <= '1';
+				DEMUX_SEL <= '0';
+				LOAD1 <= '0';
+				LOAD2 <= '0';
+				
+
 		end case;
 	end process SALIDA;
 	
