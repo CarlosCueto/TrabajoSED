@@ -1,0 +1,585 @@
+Release 14.6 - xst P.68d (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> 
+Reading design: TOP_HEXCOUNTER.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TOP_HEXCOUNTER.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TOP_HEXCOUNTER"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-ft256
+
+---- Source Options
+Top Module Name                    : TOP_HEXCOUNTER
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" in Library work.
+Entity <prescaler> compiled.
+Entity <prescaler> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd" in Library work.
+Architecture behavioral of Entity debouncer is up to date.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd" in Library work.
+Architecture behavioral of Entity statemachine is up to date.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd" in Library work.
+Architecture behavioral of Entity demux is up to date.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd" in Library work.
+Architecture behavioral of Entity hexcounter is up to date.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd" in Library work.
+Architecture dataflow of Entity hexdecoder is up to date.
+Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd" in Library work.
+Architecture structural of Entity top_hexcounter is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <TOP_HEXCOUNTER> in library <work> (architecture <structural>).
+
+Analyzing hierarchy for entity <PRESCALER> in library <work> (architecture <behavioral>) with generics.
+	FREC_IN = 50000000
+	FREC_OUT = 1
+
+Analyzing hierarchy for entity <DEBOUNCER> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <STATEMACHINE> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <DEMUX> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <HEXCOUNTER> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <HEXDECODER> in library <work> (architecture <dataflow>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <TOP_HEXCOUNTER> in library <work> (Architecture <structural>).
+Entity <TOP_HEXCOUNTER> analyzed. Unit <TOP_HEXCOUNTER> generated.
+
+Analyzing generic Entity <PRESCALER> in library <work> (Architecture <behavioral>).
+	FREC_IN = 50000000
+	FREC_OUT = 1
+WARNING:Xst:819 - "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" line 54: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <CLK_OUT_i>
+Entity <PRESCALER> analyzed. Unit <PRESCALER> generated.
+
+Analyzing Entity <DEBOUNCER> in library <work> (Architecture <behavioral>).
+Entity <DEBOUNCER> analyzed. Unit <DEBOUNCER> generated.
+
+Analyzing Entity <STATEMACHINE> in library <work> (Architecture <behavioral>).
+Entity <STATEMACHINE> analyzed. Unit <STATEMACHINE> generated.
+
+Analyzing Entity <DEMUX> in library <work> (Architecture <behavioral>).
+Entity <DEMUX> analyzed. Unit <DEMUX> generated.
+
+Analyzing Entity <HEXCOUNTER> in library <work> (Architecture <behavioral>).
+Entity <HEXCOUNTER> analyzed. Unit <HEXCOUNTER> generated.
+
+Analyzing Entity <HEXDECODER> in library <work> (Architecture <dataflow>).
+Entity <HEXDECODER> analyzed. Unit <HEXDECODER> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <PRESCALER>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd".
+    Found 1-bit register for signal <CLK_OUT_i>.
+    Found 25-bit up counter for signal <count>.
+    Found 25-bit comparator less for signal <count$cmp_lt0000> created at line 60.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <PRESCALER> synthesized.
+
+
+Synthesizing Unit <DEBOUNCER>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd".
+    Found 1-bit register for signal <Q1>.
+    Found 1-bit register for signal <Q2>.
+    Found 1-bit register for signal <Q3>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <DEBOUNCER> synthesized.
+
+
+Synthesizing Unit <STATEMACHINE>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd".
+    Found finite state machine <FSM_0> for signal <EST_ACTUAL>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Reset              | CLR_N                     (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | state0                                         |
+    | Power Up State     | state0                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <STATEMACHINE> synthesized.
+
+
+Synthesizing Unit <DEMUX>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd".
+Unit <DEMUX> synthesized.
+
+
+Synthesizing Unit <HEXCOUNTER>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd".
+    Found 4-bit up counter for signal <COUNT_i>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <HEXCOUNTER> synthesized.
+
+
+Synthesizing Unit <HEXDECODER>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd".
+Unit <HEXDECODER> synthesized.
+
+
+Synthesizing Unit <TOP_HEXCOUNTER>.
+    Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd".
+Unit <TOP_HEXCOUNTER> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 25-bit up counter                                     : 1
+ 4-bit up counter                                      : 2
+# Registers                                            : 10
+ 1-bit register                                        : 10
+# Comparators                                          : 1
+ 25-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <Inst_STATEMACHINE/EST_ACTUAL/FSM> on signal <EST_ACTUAL[1:3]> with sequential encoding.
+--------------------
+ State  | Encoding
+--------------------
+ state0 | 000
+ state1 | 010
+ state2 | 011
+ state3 | 001
+ state4 | 100
+ state5 | 101
+ state6 | 110
+ state7 | 111
+--------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Counters                                             : 3
+ 25-bit up counter                                     : 1
+ 4-bit up counter                                      : 2
+# Registers                                            : 10
+ Flip-Flops                                            : 10
+# Comparators                                          : 1
+ 25-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <TOP_HEXCOUNTER> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TOP_HEXCOUNTER, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 46
+ Flip-Flops                                            : 46
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : TOP_HEXCOUNTER.ngr
+Top Level Output File Name         : TOP_HEXCOUNTER
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 25
+
+Cell Usage :
+# BELS                             : 170
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 3
+#      LUT2                        : 29
+#      LUT3                        : 11
+#      LUT3_D                      : 1
+#      LUT4                        : 47
+#      LUT4_L                      : 3
+#      MUXCY                       : 36
+#      MUXF5                       : 6
+#      VCC                         : 1
+#      XORCY                       : 25
+# FlipFlops/Latches                : 46
+#      FDC                         : 28
+#      FDCE                        : 8
+#      FDE                         : 1
+#      FDR                         : 9
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 24
+#      IBUF                        : 8
+#      OBUF                        : 16
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-5 
+
+ Number of Slices:                       54  out of   1920     2%  
+ Number of Slice Flip Flops:             46  out of   3840     1%  
+ Number of 4 input LUTs:                101  out of   3840     2%  
+ Number of IOs:                          25
+ Number of bonded IOBs:                  25  out of    173    14%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 26    |
+CLK_PRESCALER/CLK_OUT_i1           | BUFG                   | 20    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------------------------------+----------------------------+-------+
+Control Signal                                                                                       | Buffer(FF name)            | Load  |
+-----------------------------------------------------------------------------------------------------+----------------------------+-------+
+Inst_STATEMACHINE/EST_ACTUAL_FSM_Acst_FSM_inv(Inst_STATEMACHINE/EST_ACTUAL_FSM_Acst_FSM_inv1_INV_0:O)| NONE(CLK_PRESCALER/count_0)| 36    |
+-----------------------------------------------------------------------------------------------------+----------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 8.405ns (Maximum Frequency: 118.983MHz)
+   Minimum input arrival time before clock: 4.470ns
+   Maximum output required time after clock: 9.270ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 8.405ns (frequency: 118.983MHz)
+  Total number of paths / destination ports: 9101 / 27
+-------------------------------------------------------------------------
+Delay:               8.405ns (Levels of Logic = 39)
+  Source:            CLK_PRESCALER/count_0 (FF)
+  Destination:       CLK_PRESCALER/count_24 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: CLK_PRESCALER/count_0 to CLK_PRESCALER/count_24
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.626   1.040  CLK_PRESCALER/count_0 (CLK_PRESCALER/count_0)
+     LUT4:I0->O            1   0.479   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_lut<0> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<0> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<1> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<2> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<3> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<4> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<5> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<6> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<7> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<8> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<9> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<10> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<10>)
+     MUXCY:CI->O          27   0.265   1.551  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<11> (CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<11>)
+     INV:I->O              1   0.479   0.681  CLK_PRESCALER/Mcompar_count_cmp_lt0000_cy<11>_inv_INV_0 (CLK_PRESCALER/count_cmp_lt0000)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<0> (CLK_PRESCALER/Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<1> (CLK_PRESCALER/Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<2> (CLK_PRESCALER/Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<3> (CLK_PRESCALER/Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<4> (CLK_PRESCALER/Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.055   0.000  CLK_PRESCALER/Mcount_count_cy<5> (CLK_PRESCALER/Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<6> (CLK_PRESCALER/Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<7> (CLK_PRESCALER/Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<8> (CLK_PRESCALER/Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<9> (CLK_PRESCALER/Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<10> (CLK_PRESCALER/Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<11> (CLK_PRESCALER/Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<12> (CLK_PRESCALER/Mcount_count_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<13> (CLK_PRESCALER/Mcount_count_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<14> (CLK_PRESCALER/Mcount_count_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<15> (CLK_PRESCALER/Mcount_count_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<16> (CLK_PRESCALER/Mcount_count_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<17> (CLK_PRESCALER/Mcount_count_cy<17>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<18> (CLK_PRESCALER/Mcount_count_cy<18>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<19> (CLK_PRESCALER/Mcount_count_cy<19>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<20> (CLK_PRESCALER/Mcount_count_cy<20>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<21> (CLK_PRESCALER/Mcount_count_cy<21>)
+     MUXCY:CI->O           1   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<22> (CLK_PRESCALER/Mcount_count_cy<22>)
+     MUXCY:CI->O           0   0.056   0.000  CLK_PRESCALER/Mcount_count_cy<23> (CLK_PRESCALER/Mcount_count_cy<23>)
+     XORCY:CI->O           1   0.786   0.000  CLK_PRESCALER/Mcount_count_xor<24> (CLK_PRESCALER/Mcount_count24)
+     FDC:D                     0.176          CLK_PRESCALER/count_24
+    ----------------------------------------
+    Total                      8.405ns (5.133ns logic, 3.272ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_PRESCALER/CLK_OUT_i1'
+  Clock period: 6.132ns (frequency: 163.070MHz)
+  Total number of paths / destination ports: 162 / 25
+-------------------------------------------------------------------------
+Delay:               6.132ns (Levels of Logic = 4)
+  Source:            Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 (FF)
+  Destination:       Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3 (FF)
+  Source Clock:      CLK_PRESCALER/CLK_OUT_i1 rising
+  Destination Clock: CLK_PRESCALER/CLK_OUT_i1 rising
+
+  Data Path: Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 to Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             25   0.626   1.600  Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 (Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2)
+     LUT4:I2->O            1   0.479   0.740  SCND_DIG/CO_and000018 (SCND_DIG/CO_and000018)
+     LUT3:I2->O            2   0.479   0.804  SCND_DIG/CO_and000027 (COUNT_END)
+     LUT4_L:I2->LO         1   0.479   0.270  Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3-In95 (Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3-In95)
+     LUT2:I1->O            1   0.479   0.000  Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3-In108 (Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3-In)
+     FDC:D                     0.176          Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd3
+    ----------------------------------------
+    Total                      6.132ns (2.718ns logic, 3.414ns route)
+                                       (44.3% logic, 55.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.439ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       CLK_PRESCALER/CLK_OUT_i (FF)
+  Destination Clock: CLK rising
+
+  Data Path: RESET to CLK_PRESCALER/CLK_OUT_i
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  RESET_IBUF (RESET_IBUF)
+     LUT2:I0->O            1   0.479   0.681  CLK_PRESCALER/CLK_OUT_i_and00001 (CLK_PRESCALER/CLK_OUT_i_and0000)
+     FDE:CE                    0.524          CLK_PRESCALER/CLK_OUT_i
+    ----------------------------------------
+    Total                      3.439ns (1.718ns logic, 1.721ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_PRESCALER/CLK_OUT_i1'
+  Total number of paths / destination ports: 21 / 20
+-------------------------------------------------------------------------
+Offset:              4.470ns (Levels of Logic = 2)
+  Source:            RESET (PAD)
+  Destination:       LOAD_DEBOUNCER/Q3 (FF)
+  Destination Clock: CLK_PRESCALER/CLK_OUT_i1 rising
+
+  Data Path: RESET to LOAD_DEBOUNCER/Q3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   0.745  RESET_IBUF (RESET_IBUF)
+     INV:I->O             45   0.479   1.638  Inst_STATEMACHINE/EST_ACTUAL_FSM_Acst_FSM_inv1_INV_0 (Inst_STATEMACHINE/EST_ACTUAL_FSM_Acst_FSM_inv)
+     FDR:R                     0.892          LOAD_DEBOUNCER/Q1
+    ----------------------------------------
+    Total                      4.470ns (2.086ns logic, 2.384ns route)
+                                       (46.7% logic, 53.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_PRESCALER/CLK_OUT_i1'
+  Total number of paths / destination ports: 98 / 14
+-------------------------------------------------------------------------
+Offset:              9.270ns (Levels of Logic = 3)
+  Source:            FRST_DIG/COUNT_i_1 (FF)
+  Destination:       DIG1<1> (PAD)
+  Source Clock:      CLK_PRESCALER/CLK_OUT_i1 rising
+
+  Data Path: FRST_DIG/COUNT_i_1 to DIG1<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            12   0.626   1.245  FRST_DIG/COUNT_i_1 (FRST_DIG/COUNT_i_1)
+     LUT4:I0->O            1   0.479   0.851  DIG1<1>11 (DIG1<1>_bdd0)
+     LUT4:I1->O            1   0.479   0.681  DIG1<1>2 (DIG1_1_OBUF)
+     OBUF:I->O                 4.909          DIG1_1_OBUF (DIG1<1>)
+    ----------------------------------------
+    Total                      9.270ns (6.493ns logic, 2.777ns route)
+                                       (70.0% logic, 30.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.30 secs
+ 
+--> 
+
+
+Total memory usage is 521508 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -36,8 +36,8 @@ entity TOP_HEXCOUNTER is
            RESET : in  STD_LOGIC;
 			  LOAD : in STD_LOGIC;
 			  DIG_IN : in STD_LOGIC_VECTOR (3 downto 0);
-           DIG1 : out  STD_LOGIC_VECTOR (7 downto 0);
-           DIG2 : out  STD_LOGIC_VECTOR (7 downto 0)
+           DIG_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
+           DISPLAY_SEL : out  STD_LOGIC_VECTOR (1 downto 0)
 	  );
 end TOP_HEXCOUNTER;
 
@@ -111,6 +111,7 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 	signal COUNT1_IN, COUNT2_IN : std_logic_vector(3 downto 0);
 	signal FRST_DIG_CARRY : std_logic;
 	signal FRST_HEX, SCND_HEX : std_logic_vector(3 downto 0);
+	signal DIG1, DIG2 : std_logic_vector(7 downto 0);
 	
 begin
 
@@ -157,7 +158,7 @@ begin
 	);
 	
 	
-	Inst_DEMUX: DEMUX PORT MAP(
+	LOAD_DEMUX: DEMUX PORT MAP(
 		SIGNAL_IN => DIG_IN,
 		SEL => DEMUX_SEL,
 		SIGNAL1 => COUNT1_IN,
@@ -196,6 +197,13 @@ begin
 		HEX => SCND_HEX,
 		LED => DIG2,
 		EN => DECODER_EN
+	);
+	
+	DISPLAY_DEMUX: DEMUX PORT MAP(
+		SIGNAL_IN => '0',
+		SEL => CLK,
+		SIGNAL1 => DISPLAY_SEL(0),
+		SIGNAL2 => DISPLAY_SEL(1)
 	);
 
 end STRUCTURAL;

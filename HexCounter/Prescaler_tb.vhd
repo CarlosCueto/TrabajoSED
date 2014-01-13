@@ -109,6 +109,7 @@ BEGIN
 			severity failure;
 		
 		wait until CLK_OUT = '0';
+
 		
 		assert (now - rise_time) = CLK_OUT_period * 0.5
 			report "Incorrect out first semiperiod"
