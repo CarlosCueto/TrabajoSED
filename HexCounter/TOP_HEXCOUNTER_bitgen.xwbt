@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/maxwell/GitHub/TrabajoSED/HexCounter/TOP_HEXCOUNTER.ncd
+OUTFILE=/home/maxwell/GitHub/TrabajoSED/HexCounter/TOP_HEXCOUNTER.bit
+FAMILY=Spartan3
+PART=xc3s200-5ft256
+WORKINGDIR=/home/maxwell/GitHub/TrabajoSED/HexCounter
+LICENSE=WebPack
+USER_INFO=210795939_0_0_617

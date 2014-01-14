@@ -30,10 +30,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity MUX is
-    Port ( SIGNAL1 : in  STD_LOGIC_VECTOR (7 downto 0);
-           SIGNAL2 : in  STD_LOGIC_VECTOR (7 downto 0);
+	 Generic (
+			  WIDTH : in positive := 8
+	 );
+    Port ( SIGNAL1 : in  STD_LOGIC_VECTOR (WIDTH-1 downto 0);
+           SIGNAL2 : in  STD_LOGIC_VECTOR (WIDTH-1 downto 0);
 			  SEL : in STD_LOGIC;
-           SIGNAL_OUT : out  STD_LOGIC_VECTOR (7 downto 0));
+           SIGNAL_OUT : out  STD_LOGIC_VECTOR (WIDTH-1 downto 0));
 end MUX;
 
 architecture BEHAVIORAL of MUX is
@@ -41,7 +44,8 @@ architecture BEHAVIORAL of MUX is
 begin
 	with SEL select
 		SIGNAL_OUT <= SIGNAL1 when '0',
-						  SIGNAL2 when '1';
+						  SIGNAL2 when '1',
+						  (others => '0') when others;
 
 end BEHAVIORAL;
 

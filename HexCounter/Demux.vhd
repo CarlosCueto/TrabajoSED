@@ -30,10 +30,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity DEMUX is
-    Port ( SIGNAL_IN : in  STD_LOGIC_VECTOR (3 downto 0);
+	 Generic (
+			  WIDTH : in positive := 4
+	 );
+    Port ( SIGNAL_IN : in  STD_LOGIC_VECTOR (WIDTH-1 downto 0);
 			  SEL : IN STD_LOGIC;	
-           SIGNAL1 : out  STD_LOGIC_VECTOR (3 downto 0);
-           SIGNAL2 : out  STD_LOGIC_VECTOR (3 downto 0));
+           SIGNAL1 : out  STD_LOGIC_VECTOR (WIDTH-1 downto 0);
+           SIGNAL2 : out  STD_LOGIC_VECTOR (WIDTH-1 downto 0));
 end DEMUX;
 
 architecture BEHAVIORAL of DEMUX is

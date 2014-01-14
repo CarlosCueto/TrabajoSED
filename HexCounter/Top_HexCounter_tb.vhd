@@ -49,8 +49,10 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
          RESET : IN  std_logic;
 			LOAD : IN std_logic;
 			DIG_IN : IN  std_logic_vector(3 downto 0);
-         DIG1 : OUT  std_logic_vector(7 downto 0);
-         DIG2 : OUT  std_logic_vector(7 downto 0)
+         DIG_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
+         DISPLAY_SEL : out  STD_LOGIC_VECTOR (1 downto 0);
+			
+			TDIG1, TDIG2: out  STD_LOGIC_VECTOR (3 downto 0)
         );
     END COMPONENT;
     
@@ -64,8 +66,11 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
 	signal DIG_IN : std_logic_vector(3 downto 0);
 
  	--Outputs
-   signal DIG1 : std_logic_vector(7 downto 0);
-   signal DIG2 : std_logic_vector(7 downto 0);
+   signal DIG_OUT : std_logic_vector(7 downto 0);
+   signal DISPLAY_SEL : STD_LOGIC_VECTOR (1 downto 0);
+	
+	
+	signal TDIG1, TDIG2 : STD_LOGIC_VECTOR (3 downto 0);
 	
 
    -- Clock period definitions
@@ -85,8 +90,11 @@ BEGIN
           RESET => RESET,
 			 LOAD => LOAD,
 			 DIG_IN => DIG_IN,
-          DIG1 => DIG1,
-          DIG2 => DIG2
+          DIG_OUT => DIG_OUT,
+          DISPLAY_SEL => DISPLAY_SEL,
+			 
+			 TDIG1 => TDIG1, 
+			 TDIG2 => TDIG2 
         );
 
    -- Clock process definitions
@@ -125,7 +133,13 @@ BEGIN
 		
 		wait for 60 ns;
    
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101" 
+			report "Reset malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+		
+		assert DIG_OUT = "11111101"
 			report "Reset malfunction"
 			severity failure;
 			
@@ -142,17 +156,29 @@ BEGIN
 
 		end loop;
 		
-		assert DIG1 = "01110001" and DIG2 = "00000011"
+		assert DIG_OUT = "01110001" 
 			report "First digit malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+		
+		assert DIG_OUT = "00000011"
+			report "Second digit malfunction"
 			severity failure;
 			
 		wait until CLK_DOS;
 		
-		assert DIG1 = "00000011" and DIG2 = "10011111"
+		assert DIG_OUT = "00000011"
 			report "Carry malfunction"
 			severity failure;
 			
-----------------------------------------------------------		
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "10011111"
+			report "Carry malfunction"
+			severity failure;
+			
+------------------------------------------------------------		
 		
 		RESET <= '0';
 		wait for 2 ns;
@@ -160,14 +186,20 @@ BEGIN
 		
 		wait for 60 ns;
 		
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101" 
+			report "Reset malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+		
+		assert DIG_OUT = "11111101"
 			report "Reset malfunction"
 			severity failure;
 		
 		START <= '1';
 		PAUSE <= '0';
 		
-		wait for 10 ns;
+		wait for 15 ns;
 		
 		PAUSE <= '1';
 		
@@ -175,7 +207,7 @@ BEGIN
 		
 		START <= '0';
 		
-		wait for 10 ns;
+		wait for 15 ns;
 		
 		PAUSE <= '0';
 		
@@ -186,11 +218,15 @@ BEGIN
 
 		end loop;
 		
-		assert DIG1 = "10011111" and DIG2 = "00000011"
+		assert DIG_OUT = "10011111"
 			report "Pause malfunction"
 			severity failure;
+			
+		wait until CLK = '1';
 				
-
+		assert DIG_OUT = "00000011"
+			report "Pause malfunction"
+			severity failure;
 	
 	----------------------------------------------------
 	----------------------------------------------------
@@ -202,7 +238,13 @@ BEGIN
 		
 		wait for 60 ns;
 		
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101" 
+			report "Reset malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+		
+		assert DIG_OUT = "11111101"
 			report "Reset malfunction"
 			severity failure;
 		
@@ -216,7 +258,13 @@ BEGIN
 		
 		wait for 90 ns;
 		
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101"
+			report "ST3 malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "11111101"
 			report "ST3 malfunction"
 			severity failure;
 		
@@ -229,10 +277,16 @@ BEGIN
 		
 		wait for 90 ns;
 		
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101"
 			report "ST5 malfunction"
 			severity failure;
-	
+			
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "11111101"
+			report "ST5 malfunction"
+			severity failure;
+			
 		DIG_IN <= "1010";
 		LOAD <= '1';
 		
@@ -243,7 +297,13 @@ BEGIN
 		wait for 90 ns;
 		
 		
-		assert DIG1 = "01001001" and DIG2 = "00010001"
+		assert DIG_OUT = "01001001"
+			report "Load malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "00010001"
 			report "Load malfunction"
 			severity failure;
 			
@@ -253,7 +313,13 @@ BEGIN
 		
 		LOAD <= '0';
 		
-		assert DIG1 = "11111101" and DIG2 = "11111101"
+		assert DIG_OUT = "11111101"
+			report "Back to ST0 malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "11111101"
 			report "Back to ST0 malfunction"
 			severity failure;
 			
@@ -272,13 +338,25 @@ BEGIN
 
 		end loop;
 		
-		assert DIG1 = "01110001" and DIG2 = "00010001"
+		assert DIG_OUT = "01110001"
+			report "First digit malfunction"
+			severity failure;
+			
+		wait until CLK = '1';
+			
+		assert DIG_OUT = "00010001"
 			report "First digit malfunction"
 			severity failure;
 			
 		wait until CLK_DOS;
 		
-		assert DIG1 = "00000011" and DIG2 = "11000001"
+		assert DIG_OUT = "00000011"
+			report "Carry malfunction"
+			severity failure;
+		
+		wait until CLK = '1';
+		
+		assert DIG_OUT = "11000001"
 			report "Carry malfunction"
 			severity failure;
 					

@@ -37,7 +37,9 @@ entity TOP_HEXCOUNTER is
 			  LOAD : in STD_LOGIC;
 			  DIG_IN : in STD_LOGIC_VECTOR (3 downto 0);
            DIG_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
-           DISPLAY_SEL : out  STD_LOGIC_VECTOR (1 downto 0)
+           DISPLAY_SEL : out  STD_LOGIC_VECTOR (1 downto 0);
+			  
+			  TDIG1, TDIG2 : out  STD_LOGIC_VECTOR (3 downto 0)
 	  );
 end TOP_HEXCOUNTER;
 
@@ -208,12 +210,8 @@ begin
 		EN => DECODER_EN
 	);
 	
-	DISPLAY_DEMUX: DEMUX PORT MAP(
-		SIGNAL_IN => '0',
-		SEL => CLK,
-		SIGNAL1 => DISPLAY_SEL(1),
-		SIGNAL2 => DISPLAY_SEL(0)
-	);
+	DISPLAY_SEL(1) <= CLK;
+	DISPLAY_SEL(0) <= not CLK;
 	
 	DISPLAY_MUX: MUX PORT MAP(
 		SIGNAL1 => DIG2,
@@ -221,6 +219,9 @@ begin
 		SEL => CLK,
 		SIGNAL_OUT => DIG_OUT
 	);
+	
+	 TDIG2 <= SCND_HEX;
+	TDIG1 <= FRST_HEX;
 
 end STRUCTURAL;
 

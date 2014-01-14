@@ -32,7 +32,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity PRESCALER is
 	 Generic (
 			FREC_IN : positive := 50e6;
-			FREC_OUT : positive := 1
+			FREC_OUT : positive := 25e6
 	 );
     Port ( 
 			  CLK_IN, CLR_N : in  std_logic;

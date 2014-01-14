@@ -1,5 +1,6 @@
 vhdl work "StateMachine.vhd"
 vhdl work "Prescaler.vhd"
+vhdl work "Mux.vhd"
 vhdl work "HexDecoder.vhd"
 vhdl work "HexCounter.vhd"
 vhdl work "Demux.vhd"

@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/maxwell/GitHub/TrabajoSED/HexCounter/impact.xsl
+OUTFILE=/home/maxwell/GitHub/TrabajoSED/HexCounter/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/maxwell/GitHub/TrabajoSED/HexCounter
+LICENSE=iMPACT
+USER_INFO=iMPACT
