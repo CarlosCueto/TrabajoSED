@@ -2,12 +2,12 @@ Command line:
    Top_HexCounter_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  54051
+     -socket  37156
 
-Tue Jan 14 02:42:18 2014
+Tue Jan 14 16:33:37 2014
 
 
- Elaboration Time: 0.03 sec
+ Elaboration Time: 0.02 sec
 
  Current Memory Usage: 205.05 Meg
 
@@ -20,16 +20,31 @@ Tue Jan 14 02:42:18 2014
  Total Traceable Variables  : 16
  Total Scalar Nets and Variables : 477
 Total Line Count : 234
+Total Line Count : 234
 
 ** Failure:OK. Test Finished
 User(VHDL) Code Called Simulation Stop
 In process Top_HexCounter_tb.vhd:stim_proc 
  
 
+Total Line Count : 234
 
- Total Simulation Time: 0.06 sec
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
 
- Current Memory Usage: 280.551 Meg
+Total Line Count : 234
 
-Tue Jan 14 02:42:50 2014
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
+
+Total Line Count : 234
+
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
 

@@ -11,11 +11,44 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 5us
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
 
 ** Failure:OK. Test Finished
 User(VHDL) Code Called Simulation Stop
 In process Top_HexCounter_tb.vhd:stim_proc 
  
 INFO: Simulator is stopped.
-# exit 0
+# restart
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+
+** Failure:OK. Test Finished
+User(VHDL) Code Called Simulation Stop
+In process Top_HexCounter_tb.vhd:stim_proc 
+ 
+INFO: Simulator is stopped.
