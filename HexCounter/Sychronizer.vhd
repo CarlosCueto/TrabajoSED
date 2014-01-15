@@ -41,7 +41,7 @@ architecture Behavioral of Sychronizer is
 
 	attribute ASYNC_REG : string;
 
-	attribute ASYNC_REG of sreg : signal is "FALSE";
+	attribute ASYNC_REG of sreg : signal is "TRUE";
 
 begin
 

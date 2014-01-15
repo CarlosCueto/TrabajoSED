@@ -8,42 +8,7 @@ This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# run all
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-
-** Failure:OK. Test Finished
-User(VHDL) Code Called Simulation Stop
-In process Top_HexCounter_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-# restart
-# restart
-# run all
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-
-** Failure:OK. Test Finished
-User(VHDL) Code Called Simulation Stop
-In process Top_HexCounter_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-# restart
-# run all
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-
-** Failure:OK. Test Finished
-User(VHDL) Code Called Simulation Stop
-In process Top_HexCounter_tb.vhd:stim_proc 
- 
-INFO: Simulator is stopped.
-# restart
-# run all
+# run 10 s
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 

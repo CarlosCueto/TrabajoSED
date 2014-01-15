@@ -59,5 +59,25 @@ begin
  
 	SIGNAL_OUT <= Q1 and Q2 and (not Q3);
 
+--	process (CLK)
+--		variable cuenta: integer;
+--	begin
+--		if clr_n = '1' then
+--			cuenta := 0;
+--		elsif (clk'event and clk = '1') then
+--			if signal_in = '1' then
+--				cuenta := delay - 1;
+--				signal_out <= '1';
+--			elsif cuenta /= 0 then
+--				cuenta := cuenta -1;
+--				signal_out <= '1';
+--			else
+--				signal_out <= '0';
+--			end if;
+--		end if;
+--	end process;
+	
+
+
 end Behavioral;
 

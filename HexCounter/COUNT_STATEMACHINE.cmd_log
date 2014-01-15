@@ -1,0 +1,1 @@
+vhdtdtfi -prj HexCounter -o /home/maxwell/GitHub/TrabajoSED/HexCounter/COUNT_STATEMACHINE.vhi -module COUNT_STATEMACHINE -template /opt/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Count_StateMachine.vhd 

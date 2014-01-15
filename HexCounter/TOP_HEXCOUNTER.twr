@@ -45,41 +45,49 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-RESET       |    2.671(R)|   -0.829(R)|DISPLAY_SEL_1_OBUF|   0.000|
+DIG_IN<0>   |    1.342(R)|    0.297(R)|CLK_BUFGP         |   0.000|
+DIG_IN<1>   |    1.628(R)|    0.219(R)|CLK_BUFGP         |   0.000|
+DIG_IN<2>   |    1.344(R)|    0.335(R)|CLK_BUFGP         |   0.000|
+DIG_IN<3>   |    1.098(R)|    0.475(R)|CLK_BUFGP         |   0.000|
+LOAD        |    0.363(R)|    0.985(R)|CLK_BUFGP         |   0.000|
+PAUSE       |    0.344(R)|    1.000(R)|CLK_BUFGP         |   0.000|
+RESET       |    1.780(R)|    0.955(R)|CLK_BUFGP         |   0.000|
+START       |    0.348(R)|    0.997(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
+
+Clock CLK to Pad
+--------------+------------+------------------+--------+
+              | clk (edge) |                  | Clock  |
+Destination   |   to PAD   |Internal Clock(s) | Phase  |
+--------------+------------+------------------+--------+
+DIG_OUT<1>    |   11.145(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<2>    |   11.718(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<3>    |   12.591(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<4>    |   12.023(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<5>    |   11.318(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<6>    |   11.232(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<7>    |   11.663(R)|CLK_BUFGP         |   0.000|
+DISPLAY_SEL<0>|    8.868(R)|CLK_BUFGP         |   0.000|
+DISPLAY_SEL<1>|    9.049(R)|CLK_BUFGP         |   0.000|
+--------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    7.637|         |         |         |
+CLK            |    5.865|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-CLK            |DIG_OUT<1>     |    8.855|
-CLK            |DIG_OUT<2>     |   10.059|
-CLK            |DIG_OUT<3>     |    9.406|
-CLK            |DIG_OUT<4>     |    9.080|
-CLK            |DIG_OUT<5>     |   10.170|
-CLK            |DIG_OUT<6>     |   11.389|
-CLK            |DIG_OUT<7>     |   10.119|
-CLK            |DISPLAY_SEL<0> |    8.688|
-CLK            |DISPLAY_SEL<1> |    9.733|
----------------+---------------+---------+
 
-
-Analysis completed Mon Jan 13 17:13:16 2014 
+Analysis completed Wed Jan 15 12:11:29 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 316 MB
+Peak Memory Usage: 317 MB
 
 
 

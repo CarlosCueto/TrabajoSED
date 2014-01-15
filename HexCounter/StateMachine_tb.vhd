@@ -47,10 +47,12 @@ ARCHITECTURE behavior OF StateMachine_tb IS
          PAUSE : IN  std_logic;
 			LOAD : IN  std_logic;
          COUNT_END : IN  std_logic;
+			FINISHED_CNT : IN std_LOGIC;
          COUNT_EN : OUT  std_logic;
 			DEMUX_SEL : OUT  std_logic;
 			LOAD1 : OUT  std_logic;
 			LOAD2 : OUT  std_logic;
+			START_CNT : OUT  std_logic;
          DECODER_EN : OUT  std_logic
         );
     END COMPONENT;
@@ -63,6 +65,7 @@ ARCHITECTURE behavior OF StateMachine_tb IS
    signal PAUSE : std_logic := '0';
    signal COUNT_END : std_logic := '0';
 	signal LOAD : std_logic := '0';
+	signal FINISHED_CNT : std_logic := '0';
 	
 
  	--Outputs
@@ -71,6 +74,7 @@ ARCHITECTURE behavior OF StateMachine_tb IS
 	signal LOAD1 : std_logic;
 	signal LOAD2 : std_logic;
 	signal DEMUX_SEL : std_logic;
+	signal START_CNT : std_logic;
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
@@ -81,7 +85,9 @@ ARCHITECTURE behavior OF StateMachine_tb IS
 		PAUSE : std_logic;
 		LOAD : std_logic;
 		COUNT_END : std_logic;
+		FINISHED_CNT : std_logic;
 		COUNT_EN : std_logic;
+		START_CNT : std_logic;
 		DECODER_EN : std_logic;
 	end record;
 	
@@ -99,16 +105,16 @@ ARCHITECTURE behavior OF StateMachine_tb IS
 	type TEST_VECTOR2 is array (positive range <>) of TEST2;
 	
 	constant VTEST : TEST_VECTOR := (
-			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1'),
-			(CLR_N =>'1', START=>'0', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'1'),
-			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1'),
-			(CLR_N =>'1', START=>'0', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0'),
-			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1'),
-			(CLR_N =>'1', START=>'0', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'1'),
-			(CLR_N =>'1', START=>'0', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0'),
-			(CLR_N =>'1', START=>'1', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'0'),
-			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0'),
-			(CLR_N =>'0', START=>'1', PAUSE=>'1', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0')
+			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1', FINISHED_CNT => '0', START_CNT =>'1'),
+			(CLR_N =>'1', START=>'0', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'1', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1', FINISHED_CNT => '0', START_CNT =>'1'),
+			(CLR_N =>'1', START=>'0', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'1', DECODER_EN=>'1', FINISHED_CNT => '0', START_CNT =>'1'),
+			(CLR_N =>'1', START=>'0', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'1', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'1', START=>'0', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'1', START=>'1', PAUSE=>'1', LOAD => '0', COUNT_END=>'0', COUNT_EN=>'0', DECODER_EN=>'0', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'1', START=>'1', PAUSE=>'0', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0', FINISHED_CNT => '0', START_CNT =>'0'),
+			(CLR_N =>'0', START=>'1', PAUSE=>'1', LOAD => '0', COUNT_END=>'1', COUNT_EN=>'0', DECODER_EN=>'0', FINISHED_CNT => '0', START_CNT =>'0')
 		);
 		
 	constant VTEST2 : TEST_VECTOR2 := (
@@ -130,10 +136,12 @@ BEGIN
           PAUSE => PAUSE,
 			 LOAD => LOAD,
           COUNT_END => COUNT_END,
+			 FINISHED_CNT => FINISHED_CNT,
           COUNT_EN => COUNT_EN,
 			 DEMUX_SEL => DEMUX_SEL,
 			 LOAD1 => LOAD1,
 			 LOAD2 => LOAD2,
+			 START_CNT => START_CNT,
           DECODER_EN => DECODER_EN
         );
 
@@ -180,6 +188,7 @@ BEGIN
 			PAUSE <= VTEST(i).PAUSE;
 			LOAD <= VTEST(i).LOAD;
 			COUNT_END <= VTEST(i).COUNT_END;
+			FINISHED_CNT <= VTEST(i).FINISHED_CNT;
 			
 			wait until CLK = '1';
 			wait for 5 ns;
@@ -194,8 +203,30 @@ BEGIN
 				severity failure;
 				
 			assert COUNT_EN = VTEST(i).COUNT_EN
-				report "Decoder_en malfunction"
+				report "Count_en malfunction"
 				severity failure;
+				
+			assert START_CNT = VTEST(i).START_CNT
+				report "Count_en malfunction"
+				severity failure;
+				
+			wait until CLK = '1';
+			wait until CLK = '1';
+			wait until CLK = '1';
+			wait until CLK = '1';
+			wait until CLK = '1';
+			wait until CLK = '1';
+			wait for 5 ns;
+			
+			if VTEST(i).START = '1' and  VTEST(i).PAUSE = '0' then
+				FINISHED_CNT <= '1'; 
+			end if;
+			
+			wait until CLK = '1';
+			wait for 5 ns;
+			
+			FINISHED_CNT <= '0';
+			
 		
 		end loop;
 		
