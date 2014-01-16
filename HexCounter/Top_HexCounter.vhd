@@ -43,13 +43,13 @@ end TOP_HEXCOUNTER;
 
 architecture STRUCTURAL of TOP_HEXCOUNTER is
 
-	COMPONENT Sychronizer
-	PORT(
+	component Sychronizer
+	port(
 		SIGNAL_IN : IN std_logic;
 		CLK : IN std_logic;          
 		SIGNAL_OUT : OUT std_logic
 		);
-	END COMPONENT;
+	end component;
 	
 	component DEBOUNCER
 	port(          
@@ -90,23 +90,23 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 		);
 	end component;
 	
-	COMPONENT COUNT_STATEMACHINE
-	PORT(
+	component COUNT_STATEMACHINE
+	port(
 		CLR_N : IN std_logic;
 		START_CNT : IN std_logic;
 		CLK : IN std_logic;          
 		FINISHED : OUT std_logic
 		);
-	END COMPONENT;
+	end component;
 	
-	COMPONENT DEMUX
-	PORT(
+	component DEMUX
+	port(
 		SIGNAL_IN : IN std_logic_vector(3 downto 0);
 		SEL : IN std_logic;          
 		SIGNAL1 : OUT std_logic_vector(3 downto 0);
 		SIGNAL2 : OUT std_logic_vector(3 downto 0)
 		);
-	END COMPONENT;
+	end component;
 
 	component HEXCOUNTER
 	port(
@@ -128,15 +128,16 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 		);
 	end component;
 	
-	COMPONENT MUX
-	PORT(
+	component MUX
+	port(
 		SIGNAL1 : IN std_logic_vector(7 downto 0);
 		SIGNAL2 : IN std_logic_vector(7 downto 0);
 		SEL : IN std_logic;          
 		SIGNAL_OUT : OUT std_logic_vector(7 downto 0)
 		);
-	END COMPONENT;
+	end component;
 	
+	--Señales auxiliares
 	signal SCALED_CLK : std_logic;
 	signal SYNC_START, SYNC_PAUSE, SYNC_LOAD : std_logic;
 	signal DEBOUNCED_START, DEBOUNCED_PAUSE, DEBOUNCED_LOAD : std_logic;
@@ -150,23 +151,19 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 	
 begin
 
+
 	
-	DISPLAY_PRESCALER: PRESCALER 
-	generic map (
-		FREC_OUT => 100 )
-	port map(
-		CLK_IN => CLK,
-		CLR_N => not RESET,
-		CLK_OUT => DISPLAY_CLK 
-	);
+--Acondicionamiento entrada START	
 	
+	--Sincronizador para la entrada START
 	
-	
-	START_Sychronizer: Sychronizer PORT MAP(
+	START_Sychronizer: Sychronizer port map(
 		SIGNAL_IN => START,
 		SIGNAL_OUT => SYNC_START,
 		CLK => CLK
 	);
+	
+	--Antirrebote para la entrada START
 	
 	START_DEBOUNCER: DEBOUNCER port map(
 		CLK => CLK,
@@ -175,11 +172,17 @@ begin
 		SIGNAL_OUT => DEBOUNCED_START
 	);
 	
-	PAUSE_Sychronizer: Sychronizer PORT MAP(
+--Acondicionamiento entrada PAUSE	
+	
+	--Sincronizador para la entrada PAUSE
+	
+	PAUSE_Sychronizer: Sychronizer port map(
 		SIGNAL_IN => PAUSE,
 		SIGNAL_OUT => SYNC_PAUSE,
 		CLK => CLK
 	);
+	
+	--Antirrebote para la entrada PAUSE
 	
 	PAUSE_DEBOUNCER: DEBOUNCER port map(
 		CLK => CLK,
@@ -188,11 +191,17 @@ begin
 		SIGNAL_OUT => DEBOUNCED_PAUSE
 	);
 	
-	LOAD_Sychronizer: Sychronizer PORT MAP(
+--Acondicionamiento entrada LOAD	
+	
+	--Sincronizador para la entrada LOAD
+	
+	LOAD_Sychronizer: Sychronizer port map(
 		SIGNAL_IN => LOAD,
 		SIGNAL_OUT => SYNC_LOAD,
 		CLK => CLK
 	);
+	
+	--Antirrebote para la entrada LOAD
 	
 	LOAD_DEBOUNCER: DEBOUNCER port map(
 		CLK => CLK,
@@ -201,7 +210,7 @@ begin
 		SIGNAL_OUT => DEBOUNCED_LOAD
 	);
 	
-	
+--Máquina de estados
 	
 	Inst_STATEMACHINE: STATEMACHINE port map(
 		CLK => CLK,
@@ -219,21 +228,27 @@ begin
 		DECODER_EN => DECODER_EN
 	);
 	
+	--Contador de la máquina de estados
 	
-	Inst_COUNT_STATEMACHINE: COUNT_STATEMACHINE PORT MAP(
+	Inst_COUNT_STATEMACHINE: COUNT_STATEMACHINE port map(
 		CLR_N => not RESET,
 		START_CNT => START_CNT,
 		FINISHED => FINISHED_CNT,
 		CLK => CLK
 	);
 	
-	LOAD_DEMUX: DEMUX PORT MAP(
+--Demultiplexor para carga síncrona
+	
+	LOAD_DEMUX: DEMUX port map(
 		SIGNAL_IN => DIG_IN,
 		SEL => DEMUX_SEL,
 		SIGNAL1 => COUNT1_IN,
 		SIGNAL2 => COUNT2_IN
 	);
 
+--Primer dígito
+
+	--Contador del primer dígito
 	
 	FRST_DIG: HEXCOUNTER port map(
 		CLK => CLK,
@@ -245,6 +260,17 @@ begin
 		CO => FRST_DIG_CARRY
 	);
 	
+	--Decodificador del primer dígito
+
+	FRST_DIG_DECODER: HEXDECODER port map(
+		HEX => FRST_HEX,
+		LED => DIG1,
+		EN => DECODER_EN
+	);
+	
+--Segundo dígito
+
+	--Contador del segundo dígito
 	
 	SCND_DIG: HEXCOUNTER port map(
 		CLK => CLK,
@@ -255,12 +281,8 @@ begin
 		COUNT_OUT => SCND_HEX,
 		CO => COUNT_END
 	);
-
-	FRST_DIG_DECODER: HEXDECODER port map(
-		HEX => FRST_HEX,
-		LED => DIG1,
-		EN => DECODER_EN
-	);
+	
+	--Decodificador del segundo dígito
 	
 	SCND_DIG_DECODER: HEXDECODER port map(
 		HEX => SCND_HEX,
@@ -268,11 +290,27 @@ begin
 		EN => DECODER_EN
 	);
 	
+--Displays
+
+	--Prescaler de 100 Hz para los displays
+	
+	DISPLAY_PRESCALER: PRESCALER 
+	generic map (
+		FREC_OUT => 100 )
+	port map(
+		CLK_IN => CLK,
+		CLR_N => not RESET,
+		CLK_OUT => DISPLAY_CLK 
+	);
+
+	--Salida de selección de los displays
+	
 	DISPLAY_SEL(3) <= '1';
 	DISPLAY_SEL(2) <= '1';
 	DISPLAY_SEL(1) <= DISPLAY_CLK;
 	DISPLAY_SEL(0) <= not DISPLAY_CLK;
 	
+	--Selección del dígito de entrada a los displays
 		
 	DISPLAY_MUX: MUX PORT MAP(
 		SIGNAL1 => DIG2,
@@ -280,11 +318,6 @@ begin
 		SEL => DISPLAY_CLK,
 		SIGNAL_OUT => DIG_OUT
 	);
-
-
-	
-
-
 
 end STRUCTURAL;
 

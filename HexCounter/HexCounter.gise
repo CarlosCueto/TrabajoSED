@@ -102,6 +102,10 @@
     <transform xil_pn:end_ts="1389801775" xil_pn:in_ck="-3571757296380946191" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1389801775">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Count_StateMachine.vhd"/>
       <outfile xil_pn:name="Count_StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
@@ -136,6 +140,11 @@
     <transform xil_pn:end_ts="1389801775" xil_pn:in_ck="-3571757296380946191" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1389801775">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Count_StateMachine.vhd"/>
       <outfile xil_pn:name="Count_StateMachine_tb.vhd"/>
       <outfile xil_pn:name="Debouncer.vhd"/>
@@ -158,9 +167,12 @@
     <transform xil_pn:end_ts="1389802638" xil_pn:in_ck="-3571757296380946191" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7630141356553475905" xil_pn:start_ts="1389802633">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="Top_HexCounter_tb_beh.prj"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="Top_HexCounter_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
@@ -170,6 +182,7 @@
     <transform xil_pn:end_ts="1389802638" xil_pn:in_ck="1993473204662396521" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="796988708759885184" xil_pn:start_ts="1389802638">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Top_HexCounter_tb_isim_beh.wdb"/>
@@ -204,10 +217,12 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389889109" xil_pn:in_ck="-6830725608607514176" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="8617982980208823153" xil_pn:start_ts="1389889088">
+    <transform xil_pn:end_ts="1389896560" xil_pn:in_ck="-6830725608607514176" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="8617982980208823153" xil_pn:start_ts="1389896547">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.lso"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.ngc"/>
@@ -225,24 +240,19 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1389800384" xil_pn:in_ck="9211110130063701952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1937553718205551631" xil_pn:start_ts="1389800372">
+    <transform xil_pn:end_ts="1389896568" xil_pn:in_ck="9211110130063701952" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1937553718205551631" xil_pn:start_ts="1389896560">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.bld"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.ngd"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1389800394" xil_pn:in_ck="-6054857972456268287" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="3855906223012716089" xil_pn:start_ts="1389800384">
+    <transform xil_pn:end_ts="1389896576" xil_pn:in_ck="-6054857972456268287" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="3855906223012716089" xil_pn:start_ts="1389896568">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.pcf"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER_map.map"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER_map.mrp"/>
@@ -253,10 +263,9 @@
       <outfile xil_pn:name="TOP_HEXCOUNTER_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1389800411" xil_pn:in_ck="-6081848161763347238" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3333849164707216606" xil_pn:start_ts="1389800394">
+    <transform xil_pn:end_ts="1389896588" xil_pn:in_ck="-6081848161763347238" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="3333849164707216606" xil_pn:start_ts="1389896576">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.ncd"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.pad"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.par"/>
@@ -268,13 +277,9 @@
       <outfile xil_pn:name="TOP_HEXCOUNTER_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1389800422" xil_pn:in_ck="-2309851607622168038" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1389800412">
+    <transform xil_pn:end_ts="1389896595" xil_pn:in_ck="-2309851607622168038" xil_pn:name="TRANEXT_bitFile_spartan3" xil_pn:prop_ck="-2672950586390118423" xil_pn:start_ts="1389896588">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.bgn"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.bit"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.drc"/>
@@ -284,10 +289,9 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1389800411" xil_pn:in_ck="-1642172474161322883" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1389800406">
+    <transform xil_pn:end_ts="1389896588" xil_pn:in_ck="-1642172474161322883" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1389896585">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.twr"/>
       <outfile xil_pn:name="TOP_HEXCOUNTER.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

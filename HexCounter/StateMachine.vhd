@@ -50,78 +50,17 @@ begin
 	process(EST_ACTUAL, START, PAUSE, COUNT_END, LOAD, FINISHED_CNT)
 	begin
 	
---		case EST_ACTUAL is
---			when STATE0 =>
---				if LOAD = '1' then
---					EST_SIGUIENTE <= STATE3;
---				elsif START = '1' and PAUSE = '0' and COUNT_END = '0' then
---					EST_SIGUIENTE <= STATE1;
---				else
---					EST_SIGUIENTE <= STATE0;
---				end if;
---				
---			when STATE1 =>
---				if FINISHED_CNT = '0' and COUNT_END = '0' and PAUSE = '0' then
---					EST_SIGUIENTE <= STATE1_2;
---				elsif COUNT_END = '1' then
---					EST_SIGUIENTE <= STATE0;
---				elsif PAUSE = '1' then
---					EST_SIGUIENTE <= STATE2;
---				else
---					EST_SIGUIENTE <= STATE1;
---				end if;
---				
---			when STATE1_2 =>
---				if PAUSE = '1' then
---					EST_SIGUIENTE <= STATE2;
---				elsif FINISHED_CNT = '1' then
---					EST_SIGUIENTE <= STATE1;
---				else
---					EST_SIGUIENTE <= STATE1_2;
---				end if;
---				
---			when STATE2 =>
---				if COUNT_END = '1' then
---					EST_SIGUIENTE <= STATE0;
---				elsif START = '1' then
---					EST_SIGUIENTE <= STATE1;
---				else
---					EST_SIGUIENTE <= STATE2;
---				end if;
---				
---			when STATE6 =>
---				EST_SIGUIENTE <= STATE7;
---			
---			when STATE4 =>
---				EST_SIGUIENTE <= STATE5;
---			
---			when STATE5 =>
---				if LOAD = '1' then
---					EST_SIGUIENTE <= STATE6;
---				else
---					EST_SIGUIENTE <= STATE5;
---				end if;
---			
---			when STATE3 =>
---				if LOAD = '1' then
---					EST_SIGUIENTE <= STATE4;
---				else
---					EST_SIGUIENTE <= STATE3;
---				end if;
---			
---			when STATE7 =>
---				if LOAD = '1' then
---					EST_SIGUIENTE <= STATE0;
---				else
---					EST_SIGUIENTE <= STATE7;
---				end if;
-			
-			
-
-
-			
+		case EST_ACTUAL is
+			when STATE0 =>
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE3;
+				elsif START = '1' and PAUSE = '0' and COUNT_END = '0' then
+					EST_SIGUIENTE <= STATE1;
+				else
+					EST_SIGUIENTE <= STATE0;
+				end if;
 				
-			if EST_ACTUAL = STATE1 then
+			when STATE1 =>
 				if FINISHED_CNT = '0' and COUNT_END = '0' and PAUSE = '0' then
 					EST_SIGUIENTE <= STATE1_2;
 				elsif COUNT_END = '1' then
@@ -132,7 +71,7 @@ begin
 					EST_SIGUIENTE <= STATE1;
 				end if;
 				
-			elsif EST_ACTUAL = STATE1_2 then
+			when STATE1_2 =>
 				if PAUSE = '1' then
 					EST_SIGUIENTE <= STATE2;
 				elsif FINISHED_CNT = '1' then
@@ -141,7 +80,7 @@ begin
 					EST_SIGUIENTE <= STATE1_2;
 				end if;
 				
-			elsif EST_ACTUAL = STATE2 then
+			when STATE2 =>
 				if COUNT_END = '1' then
 					EST_SIGUIENTE <= STATE0;
 				elsif START = '1' then
@@ -150,51 +89,37 @@ begin
 					EST_SIGUIENTE <= STATE2;
 				end if;
 				
-			elsif EST_ACTUAL = STATE7 then
-				if LOAD = '1' then
-					EST_SIGUIENTE <= STATE0;
-				else
-					EST_SIGUIENTE <= STATE7;
-				end if;
+			when STATE6 =>
+				EST_SIGUIENTE <= STATE7;
 			
-			elsif EST_ACTUAL = STATE6 then
-				if LOAD = '0' then
-					EST_SIGUIENTE <= STATE7;
-				end if;
-									
-			elsif EST_ACTUAL = STATE5 then
+			when STATE4 =>
+				EST_SIGUIENTE <= STATE5;
+			
+			when STATE5 =>
 				if LOAD = '1' then
 					EST_SIGUIENTE <= STATE6;
 				else
 					EST_SIGUIENTE <= STATE5;
 				end if;
-				
-			elsif EST_ACTUAL = STATE4 then
-				if LOAD = '0' then
-					EST_SIGUIENTE <= STATE5;
-				end if;
 			
-			elsif EST_ACTUAL = STATE3 then
+			when STATE3 =>
 				if LOAD = '1' then
 					EST_SIGUIENTE <= STATE4;
 				else
 					EST_SIGUIENTE <= STATE3;
 				end if;
-				
-			elsif EST_ACTUAL = STATE0 then
-				if LOAD = '1' then
-					EST_SIGUIENTE <= STATE3;
-				elsif START = '1' and PAUSE = '0' and COUNT_END = '0' then
-					EST_SIGUIENTE <= STATE1;
-				else
-					EST_SIGUIENTE <= STATE0;
-				end if;
-				
-			end if;
-		
 			
-		
+			when STATE7 =>
+				if LOAD = '1' then
+					EST_SIGUIENTE <= STATE0;
+				else
+					EST_SIGUIENTE <= STATE7;
+				end if;
+		end case;	
+			
+			
 	end process ESTADO_SIGUIENTE;
+	
 	
 	REGISTRATE:
 	process(CLK, CLR_N)

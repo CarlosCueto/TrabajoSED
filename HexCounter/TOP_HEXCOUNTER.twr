@@ -45,14 +45,14 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-DIG_IN<0>   |    1.792(R)|   -0.094(R)|CLK_BUFGP         |   0.000|
-DIG_IN<1>   |    1.546(R)|    0.213(R)|CLK_BUFGP         |   0.000|
-DIG_IN<2>   |    1.572(R)|    0.675(R)|CLK_BUFGP         |   0.000|
-DIG_IN<3>   |    1.278(R)|    0.401(R)|CLK_BUFGP         |   0.000|
+DIG_IN<0>   |    1.707(R)|    0.337(R)|CLK_BUFGP         |   0.000|
+DIG_IN<1>   |    1.730(R)|    0.144(R)|CLK_BUFGP         |   0.000|
+DIG_IN<2>   |    1.869(R)|    0.180(R)|CLK_BUFGP         |   0.000|
+DIG_IN<3>   |    1.393(R)|    0.310(R)|CLK_BUFGP         |   0.000|
 LOAD        |    0.348(R)|    0.997(R)|CLK_BUFGP         |   0.000|
-PAUSE       |    1.137(R)|    0.366(R)|CLK_BUFGP         |   0.000|
-RESET       |    2.368(R)|    0.723(R)|CLK_BUFGP         |   0.000|
-START       |    0.648(R)|    0.757(R)|CLK_BUFGP         |   0.000|
+PAUSE       |    0.349(R)|    0.996(R)|CLK_BUFGP         |   0.000|
+RESET       |    2.119(R)|    0.941(R)|CLK_BUFGP         |   0.000|
+START       |    0.348(R)|    0.997(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -60,15 +60,15 @@ Clock CLK to Pad
               | clk (edge) |                  | Clock  |
 Destination   |   to PAD   |Internal Clock(s) | Phase  |
 --------------+------------+------------------+--------+
-DIG_OUT<1>    |   13.117(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<2>    |   13.115(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<3>    |   12.783(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<4>    |   12.558(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<5>    |   12.993(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<6>    |   13.015(R)|CLK_BUFGP         |   0.000|
-DIG_OUT<7>    |   12.971(R)|CLK_BUFGP         |   0.000|
-DISPLAY_SEL<0>|    9.831(R)|CLK_BUFGP         |   0.000|
-DISPLAY_SEL<1>|    8.941(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<1>    |   11.558(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<2>    |   12.367(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<3>    |   11.635(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<4>    |   11.699(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<5>    |   11.742(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<6>    |   11.734(R)|CLK_BUFGP         |   0.000|
+DIG_OUT<7>    |   12.633(R)|CLK_BUFGP         |   0.000|
+DISPLAY_SEL<0>|    9.534(R)|CLK_BUFGP         |   0.000|
+DISPLAY_SEL<1>|    9.422(R)|CLK_BUFGP         |   0.000|
 --------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -76,11 +76,11 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    5.913|         |         |         |
+CLK            |    6.314|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Jan 15 16:40:11 2014 
+Analysis completed Thu Jan 16 19:23:07 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
