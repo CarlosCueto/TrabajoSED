@@ -57,7 +57,7 @@ ARCHITECTURE behavior OF Prescaler_tb IS
 
    -- Clock period definitions
    constant CLK_IN_period : time := 20 ns;
-	constant CLK_OUT_period : time := 40 ns;
+	constant CLK_OUT_period : time := 1000 ms;
    
 BEGIN
  

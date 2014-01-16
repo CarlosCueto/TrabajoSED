@@ -1,13 +1,13 @@
 Command line:
    Mux_tb_isim_beh.exe
      -simmode  gui
-     -simrunnum  0
-     -socket  50971
+     -simrunnum  4
+     -socket  47884
 
-Mon Jan 13 16:18:36 2014
+Wed Jan 15 17:04:06 2014
 
 
- Elaboration Time: 0.01 sec
+ Elaboration Time: 0.03 sec
 
  Current Memory Usage: 204.952 Meg
 
@@ -17,8 +17,8 @@ Mon Jan 13 16:18:36 2014
  Total Blocks           : 3
  Total Primitive Blocks : 2
  Total Processes        : 2
- Total Traceable Variables  : 8
- Total Scalar Nets and Variables : 385
+ Total Traceable Variables  : 9
+ Total Scalar Nets and Variables : 386
 Total Line Count : 12
 
 ** Failure:Ok. Test Finished
@@ -27,9 +27,9 @@ In process Mux_tb.vhd:stim_proc
  
 
 
- Total Simulation Time: 0.02 sec
+ Total Simulation Time: 0.03 sec
 
  Current Memory Usage: 280.453 Meg
 
-Mon Jan 13 16:18:41 2014
+Wed Jan 15 17:07:38 2014
 

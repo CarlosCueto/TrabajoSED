@@ -1,1 +1,3 @@
 vhdtdtfi -prj HexCounter -o /home/maxwell/GitHub/TrabajoSED/HexCounter/DEBOUNCER.vhi -module DEBOUNCER -template /opt/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Debouncer.vhd 
+vhdtdtfi -prj HexCounter -o /home/maxwell/GitHub/TrabajoSED/HexCounter/DEBOUNCER.vhi -module DEBOUNCER -template /opt/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Debouncer.vhd 
+vhdtdtfi -prj HexCounter -o /home/maxwell/GitHub/TrabajoSED/HexCounter/DEBOUNCER.vhi -module DEBOUNCER -template /opt/Xilinx/14.6/ISE_DS/ISE//data/vhdlinst.tft -deleteonerror -lib work Debouncer.vhd 

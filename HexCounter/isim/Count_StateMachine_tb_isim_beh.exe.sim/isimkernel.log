@@ -1,0 +1,10 @@
+Command line:
+   Count_StateMachine_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52964
+
+Wed Jan 15 17:02:59 2014
+
+
+ Elaboration Time: 0.01 sec

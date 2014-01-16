@@ -50,9 +50,7 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
 			LOAD : IN std_logic;
 			DIG_IN : IN  std_logic_vector(3 downto 0);
          DIG_OUT : out  STD_LOGIC_VECTOR (7 downto 0);
-         DISPLAY_SEL : out  STD_LOGIC_VECTOR (1 downto 0);
-			
-			TDIG1, TDIG2: out  STD_LOGIC_VECTOR (3 downto 0)
+         DISPLAY_SEL : out  STD_LOGIC_VECTOR (3 downto 0)
         );
     END COMPONENT;
     
@@ -67,10 +65,9 @@ ARCHITECTURE behavior OF Top_HexCounter_tb IS
 
  	--Outputs
    signal DIG_OUT : std_logic_vector(7 downto 0);
-   signal DISPLAY_SEL : STD_LOGIC_VECTOR (1 downto 0);
+   signal DISPLAY_SEL : STD_LOGIC_VECTOR (3 downto 0);
 	
 	
-	signal TDIG1, TDIG2 : STD_LOGIC_VECTOR (3 downto 0);
 	
 
    -- Clock period definitions
@@ -91,10 +88,8 @@ BEGIN
 			 LOAD => LOAD,
 			 DIG_IN => DIG_IN,
           DIG_OUT => DIG_OUT,
-          DISPLAY_SEL => DISPLAY_SEL,
-			 
-			 TDIG1 => TDIG1, 
-			 TDIG2 => TDIG2 
+          DISPLAY_SEL => DISPLAY_SEL
+ 
         );
 
    -- Clock process definitions
@@ -126,12 +121,14 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin		
-		RESET <= '0';
-		wait for 2 ns;
+   begin	
+		START <= '0';
 		RESET <= '1';
+		wait for 2 ns;
+		RESET <= '0';
 		
-		wait for 60 ns;
+		wait for 20 ns;
+		--wait for 300 ms;
    
 		assert DIG_OUT = "11111101" 
 			report "Reset malfunction"
@@ -145,220 +142,152 @@ BEGIN
 			
 		START <= '1';
 		PAUSE <= '0';
+	
 		
-		wait for 120 ns;
+		wait for 100 ns;
+		--wait for 300 ms;
+		--wait until tstart = '1';
 		
 		START <= '0';
 		
-		for i in 0 to 15 loop
 		
-			wait until CLK_DOS;
-
+		for i in 1 to 50e6 loop
+			wait until CLK = '1';
 		end loop;
+
 		
-		assert DIG_OUT = "01110001" 
+		wait for 45 ms;
+		
+		assert DIG_OUT = "00100101" 
 			report "First digit malfunction"
 			severity failure;
 			
-		wait until CLK = '1';
+		wait for 5 ms;
 		
 		assert DIG_OUT = "00000011"
 			report "Second digit malfunction"
 			severity failure;
-			
-		wait until CLK_DOS;
 		
-		assert DIG_OUT = "00000011"
-			report "Carry malfunction"
-			severity failure;
+------------------		
 			
-		wait until CLK = '1';
-			
-		assert DIG_OUT = "10011111"
-			report "Carry malfunction"
-			severity failure;
-			
-------------------------------------------------------------		
-		
-		RESET <= '0';
-		wait for 2 ns;
+		START <= '0';
 		RESET <= '1';
+		wait for 2 ns;
+		RESET <= '0';
 		
-		wait for 60 ns;
-		
-		assert DIG_OUT = "11111101" 
-			report "Reset malfunction"
-			severity failure;
-			
-		wait until CLK = '1';
-		
-		assert DIG_OUT = "11111101"
-			report "Reset malfunction"
-			severity failure;
-		
-		START <= '1';
-		PAUSE <= '0';
-		
-		wait for 15 ns;
-		
-		PAUSE <= '1';
-		
-		wait for 110 ns;
+		wait for 20 ns;
 		
 		START <= '0';
-		
-		wait for 15 ns;
-		
 		PAUSE <= '0';
+		LOAD <= '1';
 		
+		wait until CLK = '1';
+		wait for 1 ms;
 		
-		for i in 0 to 15 loop
+		LOAD <= '0';
 		
-			wait until CLK_DOS;
-
-		end loop;
+		wait until CLK = '1';
+		wait for 5 ms;
 		
-		assert DIG_OUT = "10011111"
-			report "Pause malfunction"
+		assert DIG_OUT = "00000011"
+			report "ST3 malfunction"
 			severity failure;
 			
+		for i in 1 to 500000 loop
+			wait until CLK = '1';
+		end loop;
+			
+		assert DIG_OUT = "00000011"
+			report "ST3 malfunction"
+			severity failure;
+		
+		DIG_IN <= "1110";
+		LOAD <= '1';
+		
+		wait until CLK = '1';
+		wait for 1 ms;
+		
+		LOAD <= '0';
+		
 		wait until CLK = '1';
 				
-		assert DIG_OUT = "00000011"
-			report "Pause malfunction"
-			severity failure;
-	
-	----------------------------------------------------
-	----------------------------------------------------
-		
-		
-		RESET <= '0';
-		wait for 2 ns;
-		RESET <= '1';
-		
-		wait for 60 ns;
-		
-		assert DIG_OUT = "11111101" 
-			report "Reset malfunction"
-			severity failure;
-			
-		wait until CLK = '1';
-		
-		assert DIG_OUT = "11111101"
-			report "Reset malfunction"
-			severity failure;
-		
-		START <= '0';
-		PAUSE <= '0';
-		LOAD <= '1';
-		
-		wait for 90 ns;
-		
-		LOAD <= '0';
-		
-		wait for 90 ns;
-		
-		assert DIG_OUT = "11111101"
-			report "ST3 malfunction"
-			severity failure;
-			
-		wait until CLK = '1';
-			
-		assert DIG_OUT = "11111101"
-			report "ST3 malfunction"
-			severity failure;
-		
-		DIG_IN <= "0101";
-		LOAD <= '1';
-		
-		wait for 90 ns;
-		
-		LOAD <= '0';
-		
-		wait for 90 ns;
-		
-		assert DIG_OUT = "11111101"
+		assert DIG_OUT = "01100001"
 			report "ST5 malfunction"
 			severity failure;
 			
-		wait until CLK = '1';
+		wait for 5 ms;
 			
-		assert DIG_OUT = "11111101"
+		assert DIG_OUT = "00000011"
 			report "ST5 malfunction"
 			severity failure;
 			
 		DIG_IN <= "1010";
 		LOAD <= '1';
 		
-		wait for 120 ns;
+		wait until CLK = '1';
+		wait for 1 ms;
 		
 		LOAD <= '0';
 		
-		wait for 90 ns;
+		wait until CLK = '1';
+		wait for 5 ms;
 		
 		
-		assert DIG_OUT = "01001001"
-			report "Load malfunction"
+		assert DIG_OUT = "01100001"
+			report "Load1 malfunction"
 			severity failure;
 			
-		wait until CLK = '1';
+		wait for 5 ms;
 			
 		assert DIG_OUT = "00010001"
-			report "Load malfunction"
+			report "Load2 malfunction"
 			severity failure;
 			
 		LOAD <= '1';
 		
-		wait for 120 ns;
+		wait until CLK = '1';
+		wait for 1 ms;
 		
 		LOAD <= '0';
 		
+		wait for 40 ns;
+		
 		assert DIG_OUT = "11111101"
 			report "Back to ST0 malfunction"
 			severity failure;
 			
-		wait until CLK = '1';
+		for i in 1 to 500000 loop
+			wait until CLK = '1';
+		end loop;
 			
 		assert DIG_OUT = "11111101"
 			report "Back to ST0 malfunction"
 			severity failure;
-			
-			
-			
+				
 		START <= '1';
 		PAUSE <= '0';
 		
-		wait for 120 ns;
+		wait for 180 ns;
 		
 		START <= '0';
 		
-		for i in 0 to 10 loop
-		
-			wait until CLK_DOS;
-
+		for i in 1 to 50e6 loop
+			wait until CLK = '1';
 		end loop;
+
+		wait for 45 ms;
 		
-		assert DIG_OUT = "01110001"
+		assert DIG_OUT = "00000011" 
 			report "First digit malfunction"
 			severity failure;
 			
-		wait until CLK = '1';
-			
-		assert DIG_OUT = "00010001"
-			report "First digit malfunction"
-			severity failure;
-			
-		wait until CLK_DOS;
-		
-		assert DIG_OUT = "00000011"
-			report "Carry malfunction"
-			severity failure;
-		
-		wait until CLK = '1';
+		wait for 5 ms;
 		
 		assert DIG_OUT = "11000001"
 			report "Carry malfunction"
 			severity failure;
+			
+		
 					
 		assert false
 			report "OK. Test Finished"

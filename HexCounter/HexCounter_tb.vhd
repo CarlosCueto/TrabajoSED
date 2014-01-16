@@ -46,6 +46,8 @@ ARCHITECTURE behavior OF HexCounter_tb IS
          CLK : IN  std_logic;
          CLR_N : IN  std_logic;
          CI : IN  std_logic;
+			LOAD : IN  std_logic;
+			COUNT_IN : IN  std_logic_vector(3 downto 0);
          COUNT_OUT : OUT  std_logic_vector(3 downto 0);
          CO : OUT  std_logic
         );
@@ -56,6 +58,8 @@ ARCHITECTURE behavior OF HexCounter_tb IS
    signal CLK : std_logic := '0';
    signal CLR_N : std_logic := '0';
    signal CI : std_logic := '0';
+	signal LOAD : std_logic := '0';
+	signal COUNT_IN : std_logic_vector(3 downto 0) := "0000";
 
  	--Outputs
    signal COUNT_OUT : std_logic_vector(3 downto 0);
@@ -72,6 +76,8 @@ BEGIN
           CLK => CLK,
           CLR_N => CLR_N,
           CI => CI,
+			 LOAD => LOAD,
+			 COUNT_IN => COUNT_IN,
           COUNT_OUT => COUNT_OUT,
           CO => CO
         );

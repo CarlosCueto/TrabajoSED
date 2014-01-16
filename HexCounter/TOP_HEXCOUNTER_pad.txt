@@ -1,7 +1,7 @@
 Release 14.6 - par P.68d (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Mon Jan 13 17:13:13 2014
+Wed Jan 15 16:40:06 2014
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -96,7 +96,7 @@ Pinout by Pin Number:
 |E10       |              |DIFFM    |IO_L30P_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |E11       |              |DIFFM    |IO_L28P_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |E12       |              |         |VCCINT             |         |           |              |          |         |           |         |1.2      |          |           |                |
-|E13       |              |DIFFS    |IO_L19N_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|E13       |DISPLAY_SEL<3>|IOB      |IO_L19N_2          |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E14       |DIG_OUT<7>    |IOB      |IO_L19P_2          |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |E15       |              |DIFFS    |IO_L20N_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |E16       |              |DIFFM    |IO_L20P_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
@@ -113,7 +113,7 @@ Pinout by Pin Number:
 |F11       |              |         |GND                |         |           |              |          |         |           |         |         |          |           |                |
 |F12       |DIG_IN<0>     |IOB      |IO_L21N_2          |INPUT    |LVCMOS33   |2             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |F13       |DIG_OUT<2>    |IOB      |IO_L21P_2          |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
-|F14       |              |DIFFS    |IO_L22N_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
+|F14       |DISPLAY_SEL<2>|IOB      |IO_L22N_2          |OUTPUT   |LVCMOS33   |2             |12        |SLOW     |NONE**     |         |         |LOCATED   |NO         |NONE            |
 |F15       |              |DIFFM    |IO_L22P_2          |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |F16       |              |         |VCCAUX             |         |           |              |          |         |           |         |2.5      |          |           |                |
 |G1        |              |DIFFM    |IO_L40P_7          |UNUSED   |           |7             |          |         |           |         |         |          |           |                |

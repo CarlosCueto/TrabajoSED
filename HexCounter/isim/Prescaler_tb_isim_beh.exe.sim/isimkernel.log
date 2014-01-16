@@ -1,0 +1,10 @@
+Command line:
+   Prescaler_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  5
+     -socket  55757
+
+Wed Jan 15 17:04:19 2014
+
+
+ Elaboration Time: 0.04 sec

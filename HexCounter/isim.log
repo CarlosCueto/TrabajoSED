@@ -8,10 +8,9 @@ This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 1000 ns
+# run 10 s
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-# run 5us
 
 ** Failure:OK. Test Finished
 User(VHDL) Code Called Simulation Stop

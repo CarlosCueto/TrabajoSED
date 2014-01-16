@@ -1,55 +1,70 @@
-V3 31
-FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd 2014/01/12.07:36:46 P.68d
-EN work/DEBOUNCER 1389628615 \
+V3 39
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Count_StateMachine.vhd 2014/01/15.03:20:33 P.68d
+EN work/COUNT_STATEMACHINE 1389889109 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Count_StateMachine.vhd \
+      PB ieee/std_logic_1164 1370735607
+AR work/COUNT_STATEMACHINE/BEHAVIORAL 1389889110 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Count_StateMachine.vhd \
+      EN work/COUNT_STATEMACHINE 1389889109
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd 2014/01/14.17:16:46 P.68d
+EN work/DEBOUNCER 1389889105 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/DEBOUNCER/BEHAVIORAL 1389628616 \
+AR work/DEBOUNCER/BEHAVIORAL 1389889106 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd \
-      EN work/DEBOUNCER 1389628615
+      EN work/DEBOUNCER 1389889105
 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd 2014/01/13.16:49:44 P.68d
-EN work/DEMUX 1389628619 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd \
+EN work/DEMUX 1389889111 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/DEMUX/BEHAVIORAL 1389628620 \
-      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd EN work/DEMUX 1389628619
+AR work/DEMUX/BEHAVIORAL 1389889112 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd EN work/DEMUX 1389889111
 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd 2014/01/13.14:45:14 P.68d
-EN work/HEXCOUNTER 1389628621 \
+EN work/HEXCOUNTER 1389889113 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd \
       PB ieee/std_logic_1164 1370735607 PB ieee/std_logic_arith 1370735608 \
       PB ieee/STD_LOGIC_UNSIGNED 1370735609
-AR work/HEXCOUNTER/BEHAVIORAL 1389628622 \
+AR work/HEXCOUNTER/BEHAVIORAL 1389889114 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd \
-      EN work/HEXCOUNTER 1389628621
+      EN work/HEXCOUNTER 1389889113
 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd 2014/01/12.14:44:52 P.68d
-EN work/HEXDECODER 1389628623 \
+EN work/HEXDECODER 1389889115 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/HEXDECODER/DATAFLOW 1389628624 \
+AR work/HEXDECODER/DATAFLOW 1389889116 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/HexDecoder.vhd \
-      EN work/HEXDECODER 1389628623
+      EN work/HEXDECODER 1389889115
 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Mux.vhd 2014/01/13.16:51:08 P.68d
-EN work/MUX 1389628625 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Mux.vhd \
+EN work/MUX 1389889117 FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Mux.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/MUX/BEHAVIORAL 1389628626 \
-      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Mux.vhd EN work/MUX 1389628625
-FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd 2014/01/13.15:33:49 P.68d
-EN work/PRESCALER 1389628613 \
+AR work/MUX/BEHAVIORAL 1389889118 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Mux.vhd EN work/MUX 1389889117
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd 2014/01/14.17:44:26 P.68d
+EN work/PRESCALER 1389889101 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/PRESCALER/BEHAVIORAL 1389628614 \
+AR work/PRESCALER/BEHAVIORAL 1389889102 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd \
-      EN work/PRESCALER 1389628613
-FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd 2014/01/13.14:45:14 P.68d
-EN work/STATEMACHINE 1389628617 \
+      EN work/PRESCALER 1389889101
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd 2014/01/15.16:11:31 P.68d
+EN work/STATEMACHINE 1389889107 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/STATEMACHINE/BEHAVIORAL 1389628618 \
+AR work/STATEMACHINE/BEHAVIORAL 1389889108 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd \
-      EN work/STATEMACHINE 1389628617
-FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd 2014/01/13.16:54:40 P.68d
-EN work/TOP_HEXCOUNTER 1389628627 \
+      EN work/STATEMACHINE 1389889107
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Sychronizer.vhd 2014/01/15.04:16:30 P.68d
+EN work/Sychronizer 1389889103 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Sychronizer.vhd \
+      PB ieee/std_logic_1164 1370735607
+AR work/Sychronizer/Behavioral 1389889104 \
+      FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Sychronizer.vhd \
+      EN work/Sychronizer 1389889103
+FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd 2014/01/15.17:02:53 P.68d
+EN work/TOP_HEXCOUNTER 1389889119 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd \
       PB ieee/std_logic_1164 1370735607
-AR work/TOP_HEXCOUNTER/STRUCTURAL 1389628628 \
+AR work/TOP_HEXCOUNTER/STRUCTURAL 1389889120 \
       FL /home/maxwell/GitHub/TrabajoSED/HexCounter/Top_HexCounter.vhd \
-      EN work/TOP_HEXCOUNTER 1389628627 CP PRESCALER CP DEBOUNCER CP STATEMACHINE \
-      CP DEMUX CP HEXCOUNTER CP HEXDECODER CP MUX
+      EN work/TOP_HEXCOUNTER 1389889119 CP PRESCALER CP Sychronizer CP DEBOUNCER \
+      CP STATEMACHINE CP COUNT_STATEMACHINE CP DEMUX CP HEXCOUNTER CP HEXDECODER \
+      CP MUX
