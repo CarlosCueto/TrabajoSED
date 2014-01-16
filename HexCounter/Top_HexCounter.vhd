@@ -150,11 +150,6 @@ architecture STRUCTURAL of TOP_HEXCOUNTER is
 	
 begin
 
---	CLK_PRESCALER: PRESCALER port map(
---		CLK_IN => CLK,
---		CLR_N => not RESET,
---		CLK_OUT => SCALED_CLK 
---	);
 	
 	DISPLAY_PRESCALER: PRESCALER 
 	generic map (

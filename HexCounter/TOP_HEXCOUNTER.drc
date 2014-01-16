@@ -1,8 +1,13 @@
 Release 14.6 Drc P.68d (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Jan 15 12:11:32 2014
+Wed Jan 15 16:40:17 2014
 
 drc -z TOP_HEXCOUNTER.ncd TOP_HEXCOUNTER.pcf
 
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   Inst_STATEMACHINE/EST_SIGUIENTE_or0000 is sourced by a combinatorial pin.
+   This is not good design practice. Use the CE pin to control the loading of
+   data into the flip-flop.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

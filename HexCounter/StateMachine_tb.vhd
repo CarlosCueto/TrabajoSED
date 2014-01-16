@@ -118,10 +118,10 @@ ARCHITECTURE behavior OF StateMachine_tb IS
 		);
 		
 	constant VTEST2 : TEST_VECTOR2 := (
-			(LOAD => '1', DEMUX_SEL =>'0', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '0'),
-			(LOAD => '1', DEMUX_SEL =>'0', LOAD1 => '1', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '0'),
-			(LOAD => '-', DEMUX_SEL =>'1', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '0'),
-			(LOAD => '1', DEMUX_SEL =>'1', LOAD1 => '0', LOAD2 => '1', COUNT_EN => '0', DECODER_EN => '0'),
+			(LOAD => '1', DEMUX_SEL =>'0', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '1'),
+			(LOAD => '1', DEMUX_SEL =>'0', LOAD1 => '1', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '1'),
+			(LOAD => '-', DEMUX_SEL =>'1', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '1'),
+			(LOAD => '1', DEMUX_SEL =>'1', LOAD1 => '0', LOAD2 => '1', COUNT_EN => '0', DECODER_EN => '1'),
 			(LOAD => '-', DEMUX_SEL =>'0', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '1'),
 			(LOAD => '1', DEMUX_SEL =>'0', LOAD1 => '0', LOAD2 => '0', COUNT_EN => '0', DECODER_EN => '0')
 			);
@@ -199,7 +199,7 @@ BEGIN
 			COUNT_END <= '0';
 			
 			assert DECODER_EN = VTEST(i).DECODER_EN
-				report "Decoder_en malfunction"
+				report "Decoder_en1 malfunction"
 				severity failure;
 				
 			assert COUNT_EN = VTEST(i).COUNT_EN
@@ -254,11 +254,11 @@ BEGIN
 				severity failure;
 			
 			assert DECODER_EN = VTEST2(i).DECODER_EN
-				report "Decoder_en malfunction"
+				report "Decoder_en2 malfunction"
 				severity failure;
 				
 			assert COUNT_EN = VTEST2(i).COUNT_EN
-				report "Decoder_en malfunction"
+				report "Count_en malfunction"
 				severity failure;
 		
 			wait until CLK = '1';

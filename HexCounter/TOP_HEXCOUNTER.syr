@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: TOP_HEXCOUNTER.prj
@@ -110,16 +110,13 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Prescaler.vhd" in Library work.
 Architecture behavioral of Entity prescaler is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Sychronizer.vhd" in Library work.
-Entity <sychronizer> compiled.
-Entity <sychronizer> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity sychronizer is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Debouncer.vhd" in Library work.
 Architecture behavioral of Entity debouncer is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd" in Library work.
-Entity <statemachine> compiled.
-Entity <statemachine> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity statemachine is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Count_StateMachine.vhd" in Library work.
-Entity <count_statemachine> compiled.
-Entity <count_statemachine> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity count_statemachine is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/Demux.vhd" in Library work.
 Architecture behavioral of Entity demux is up to date.
 Compiling vhdl file "/home/maxwell/GitHub/TrabajoSED/HexCounter/HexCounter.vhd" in Library work.
@@ -242,22 +239,14 @@ Unit <DEBOUNCER> synthesized.
 
 Synthesizing Unit <STATEMACHINE>.
     Related source file is "/home/maxwell/GitHub/TrabajoSED/HexCounter/StateMachine.vhd".
-    Found finite state machine <FSM_0> for signal <EST_ACTUAL>.
-    -----------------------------------------------------------------------
-    | States             | 9                                              |
-    | Transitions        | 23                                             |
-    | Inputs             | 5                                              |
-    | Outputs            | 5                                              |
-    | Clock              | CLK                       (rising_edge)        |
-    | Reset              | CLR_N                     (negative)           |
-    | Reset type         | asynchronous                                   |
-    | Reset State        | state0                                         |
-    | Power Up State     | state0                                         |
-    | Encoding           | automatic                                      |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Summary:
-	inferred   1 Finite State Machine(s).
+    Using one-hot encoding for signal <EST_ACTUAL>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <EST_ACTUAL> of Case statement line 0 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <EST_ACTUAL> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+WARNING:Xst:737 - Found 9-bit latch for signal <EST_SIGUIENTE>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 9-bit register for signal <EST_ACTUAL>.
 Unit <STATEMACHINE> synthesized.
 
 
@@ -312,10 +301,13 @@ Macro Statistics
 # Counters                                             : 3
  18-bit up counter                                     : 1
  4-bit up counter                                      : 2
-# Registers                                            : 18
+# Registers                                            : 19
  1-bit register                                        : 14
  2-bit register                                        : 3
  26-bit register                                       : 1
+ 9-bit register                                        : 1
+# Latches                                              : 1
+ 9-bit latch                                           : 1
 # Comparators                                          : 2
  18-bit comparator less                                : 1
  26-bit comparator less                                : 1
@@ -326,34 +318,20 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <Inst_STATEMACHINE/EST_ACTUAL/FSM> on signal <EST_ACTUAL[1:4]> with user encoding.
-----------------------
- State    | Encoding
-----------------------
- state0   | 0000
- state1   | 0001
- state1_2 | 0010
- state2   | 0011
- state3   | 0100
- state4   | 0101
- state5   | 0110
- state6   | 0111
- state7   | 1000
-----------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# FSMs                                                 : 1
 # Adders/Subtractors                                   : 1
  26-bit adder                                          : 1
 # Counters                                             : 3
  18-bit up counter                                     : 1
  4-bit up counter                                      : 2
-# Registers                                            : 46
- Flip-Flops                                            : 46
+# Registers                                            : 55
+ Flip-Flops                                            : 55
+# Latches                                              : 1
+ 9-bit latch                                           : 1
 # Comparators                                          : 2
  18-bit comparator less                                : 1
  26-bit comparator less                                : 1
@@ -368,6 +346,8 @@ Optimizing unit <TOP_HEXCOUNTER> ...
 
 Optimizing unit <COUNT_STATEMACHINE> ...
 
+Optimizing unit <STATEMACHINE> ...
+
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block TOP_HEXCOUNTER, actual ratio is 4.
@@ -378,8 +358,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 76
- Flip-Flops                                            : 76
+# Registers                                            : 81
+ Flip-Flops                                            : 81
 
 =========================================================================
 
@@ -408,25 +388,26 @@ Design Statistics
 # IOs                              : 21
 
 Cell Usage :
-# BELS                             : 262
+# BELS                             : 267
 #      GND                         : 1
 #      INV                         : 8
 #      LUT1                        : 30
-#      LUT2                        : 2
-#      LUT3                        : 53
-#      LUT3_D                      : 3
-#      LUT4                        : 51
-#      LUT4_L                      : 4
+#      LUT2                        : 23
+#      LUT3                        : 44
+#      LUT3_D                      : 1
+#      LUT4                        : 47
 #      MUXCY                       : 61
-#      MUXF5                       : 4
+#      MUXF5                       : 7
 #      VCC                         : 1
 #      XORCY                       : 44
-# FlipFlops/Latches                : 76
+# FlipFlops/Latches                : 90
 #      FD                          : 9
-#      FDC                         : 49
+#      FDC                         : 53
 #      FDCE                        : 8
 #      FDE                         : 1
+#      FDP                         : 1
 #      FDR                         : 9
+#      LD_1                        : 9
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 20
@@ -439,9 +420,9 @@ Device utilization summary:
 
 Selected Device : 3s200ft256-5 
 
- Number of Slices:                       80  out of   1920     4%  
- Number of Slice Flip Flops:             76  out of   3840     1%  
- Number of 4 input LUTs:                151  out of   3840     3%  
+ Number of Slices:                       82  out of   1920     4%  
+ Number of Slice Flip Flops:             90  out of   3840     2%  
+ Number of 4 input LUTs:                153  out of   3840     3%  
  Number of IOs:                          21
  Number of bonded IOBs:                  21  out of    173    12%  
  Number of GCLKs:                         1  out of      8    12%  
@@ -464,18 +445,23 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-CLK                                | BUFGP                  | 76    |
------------------------------------+------------------------+-------+
+---------------------------------------------------------------------------------+-------------------------------------------+-------+
+Clock Signal                                                                     | Clock buffer(FF name)                     | Load  |
+---------------------------------------------------------------------------------+-------------------------------------------+-------+
+CLK                                                                              | BUFGP                                     | 81    |
+Inst_STATEMACHINE/EST_SIGUIENTE_or0000(Inst_STATEMACHINE/EST_SIGUIENTE_or00001:O)| NONE(*)(Inst_STATEMACHINE/EST_SIGUIENTE_8)| 9     |
+---------------------------------------------------------------------------------+-------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-RESET                              | IBUF                   | 57    |
+RESET                              | IBUF                   | 62    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
@@ -483,8 +469,8 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 7.501ns (Maximum Frequency: 133.315MHz)
-   Minimum input arrival time before clock: 4.439ns
-   Maximum output required time after clock: 9.539ns
+   Minimum input arrival time before clock: 4.464ns
+   Maximum output required time after clock: 11.455ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -494,7 +480,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
   Clock period: 7.501ns (frequency: 133.315MHz)
-  Total number of paths / destination ports: 4940 / 82
+  Total number of paths / destination ports: 4760 / 78
 -------------------------------------------------------------------------
 Delay:               7.501ns (Levels of Logic = 27)
   Source:            DISPLAY_PRESCALER/count_0 (FF)
@@ -543,7 +529,7 @@ Delay:               7.501ns (Levels of Logic = 27)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
   Total number of paths / destination ports: 22 / 21
 -------------------------------------------------------------------------
-Offset:              4.439ns (Levels of Logic = 2)
+Offset:              4.464ns (Levels of Logic = 2)
   Source:            RESET (PAD)
   Destination:       DISPLAY_PRESCALER/CLK_OUT_i (FF)
   Destination Clock: CLK rising
@@ -552,46 +538,47 @@ Offset:              4.439ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            67   0.715   2.041  RESET_IBUF (DISPLAY_PRESCALER_not0000_inv)
+     IBUF:I->O            72   0.715   2.065  RESET_IBUF (DISPLAY_PRESCALER_not0000_inv)
      LUT2:I0->O            1   0.479   0.681  DISPLAY_PRESCALER/CLK_OUT_i_and00001 (DISPLAY_PRESCALER/CLK_OUT_i_and0000)
      FDE:CE                    0.524          DISPLAY_PRESCALER/CLK_OUT_i
     ----------------------------------------
-    Total                      4.439ns (1.718ns logic, 2.721ns route)
-                                       (38.7% logic, 61.3% route)
+    Total                      4.464ns (1.718ns logic, 2.746ns route)
+                                       (38.5% logic, 61.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
-  Total number of paths / destination ports: 93 / 9
+  Total number of paths / destination ports: 121 / 9
 -------------------------------------------------------------------------
-Offset:              9.539ns (Levels of Logic = 3)
-  Source:            Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 (FF)
+Offset:              11.455ns (Levels of Logic = 4)
+  Source:            Inst_STATEMACHINE/EST_ACTUAL_1 (FF)
   Destination:       DIG_OUT<7> (PAD)
   Source Clock:      CLK rising
 
-  Data Path: Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 to DIG_OUT<7>
+  Data Path: Inst_STATEMACHINE/EST_ACTUAL_1 to DIG_OUT<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.626   1.165  Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2 (Inst_STATEMACHINE/EST_ACTUAL_FSM_FFd2)
-     LUT4:I1->O            7   0.479   1.201  Inst_STATEMACHINE/EST_ACTUAL_FSM_Out41 (DECODER_EN)
+     FDC:C->Q             33   0.626   1.750  Inst_STATEMACHINE/EST_ACTUAL_1 (Inst_STATEMACHINE/EST_ACTUAL_1)
+     LUT4:I1->O            1   0.479   0.851  Inst_STATEMACHINE/DECODER_EN9 (Inst_STATEMACHINE/DECODER_EN9)
+     LUT2:I1->O            7   0.479   1.201  Inst_STATEMACHINE/DECODER_EN10 (DECODER_EN)
      LUT4:I0->O            1   0.479   0.681  DISPLAY_MUX/SIGNAL_OUT<5>103 (DIG_OUT_5_OBUF)
      OBUF:I->O                 4.909          DIG_OUT_5_OBUF (DIG_OUT<5>)
     ----------------------------------------
-    Total                      9.539ns (6.493ns logic, 3.046ns route)
-                                       (68.1% logic, 31.9% route)
+    Total                     11.455ns (6.972ns logic, 4.483ns route)
+                                       (60.9% logic, 39.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 9.07 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 7.62 secs
  
 --> 
 
 
-Total memory usage is 531232 kilobytes
+Total memory usage is 524244 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 
